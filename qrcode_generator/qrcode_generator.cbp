@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="qrcode_generator" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/qrcode_generator" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/qrcode_generator" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="demo/camera.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="demo/camera.h" />
+		<Unit filename="demo/convert.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="demo/convert.h" />
+		<Unit filename="demo/demo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="demo/demoutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="demo/demoutil.h" />
+		<Unit filename="demo/dthash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="demo/dthash.h" />
+		<Unit filename="demo/mjpeg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="demo/mjpeg.h" />
+		<Unit filename="demo/scanner.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/decode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/identify.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/quirc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/quirc.h" />
+		<Unit filename="lib/quirc_internal.h" />
+		<Unit filename="lib/version_db.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="qrcodegen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="qrcodegen.h" />
+		<Unit filename="tests/dbgutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tests/dbgutil.h" />
+		<Unit filename="tests/inspect.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tests/qrtest.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

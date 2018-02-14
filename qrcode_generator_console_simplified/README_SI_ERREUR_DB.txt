@@ -1,0 +1,2 @@
+Si un fatal erreur ce produit dans le code pour les fonctions MYSQL il faut clique droit sur le projet qrcode_generator_console
+faire un "add files" et trouver le fichier mysqlclient.a dans le dossier mingw32/lib de codeblocks
