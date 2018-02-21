@@ -21,3 +21,15 @@
 	<winsock.h>
 	<MYSQL/mysql.h>
 
+1518601044 source:c:\users\azn_j\desktop\projet_annuel2i_save\qrcode_generator_console_simplified\qrcodegen.c
+	<assert.h>
+	<limits.h>
+	<stdlib.h>
+	<string.h>
+	"qrcodegen.h"
+
+1518600494 c:\users\azn_j\desktop\projet_annuel2i_save\qrcode_generator_console_simplified\qrcodegen.h
+	<stdbool.h>
+	<stddef.h>
+	<stdint.h>
+

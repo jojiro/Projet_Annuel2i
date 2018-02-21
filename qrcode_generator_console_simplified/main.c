@@ -42,12 +42,21 @@ typedef struct db_params{
 
 
 // Function prototypes
-static void doBasicDemo(db_params *db);
+static void doBasicDemo(db_params *db,char **argv);
 static void printQr(const uint8_t qrcode[]);
 
 
 // The main application program.
-int main(void) {
+int main(int argc, char **argv) {
+
+    if(argc>2){
+        printf("Nombre d'arguments incorrecte \n il ne faut que l'identifiant de la personne créer, en argument. Merci.\n");
+        return -1;
+    }
+    // ici c'est juste un test à commenter par la suite.
+    // on print l'identifiant pour voir si il correspond
+    printf("identifiant : %c \n", *(argv + 1));
+
     //Déclaration du pointeur de structure de type MYSQL
     MYSQL *mysql = NULL;
     // Déclaration des objets pour db_params db
@@ -61,20 +70,21 @@ int main(void) {
     //Si la connexion réussie...
 
     if(mysql_real_connect(mysql,"localhost","root","","projet_annuel",0,NULL,0)) // le nom de la bdd c'est projet_annuel
-    {
+    { // pour les MAC le mot de passe pour la bdd est "root" et pas ""
         mysql_close(mysql);
     }
     else
     {
         printf("Une erreur s'est produite lors de la connexion à la BDD!");
     }
+
     // Initialisation d'une structure pour les informations de connexion en bdd
     db_params db = { .mysql = mysql, .result = result};
 
-	doBasicDemo(&db);
+	doBasicDemo(&db,argv); // ici il y a un soucis pour passer en argument argv qui est double pointeur.
 
-    //mysql_close(mysql);
-    //mysql_free_result(result);
+    mysql_close(mysql);
+    mysql_free_result(result);
 	return EXIT_SUCCESS;
 }
 
@@ -83,12 +93,13 @@ int main(void) {
 /*---- A modifier à convenance ----*/
 
 // Creates a single QR Code, then prints it to the console.
-static void doBasicDemo(db_params *db) {
-/*
-    char identifiant[10];
-    //identifiant[0] = '1';
-    char request[100] = "SELECT id_client FROM CLIENT WHERE id_client=1";
-    //strcat(request, identifiant);
+static void doBasicDemo(db_params *db,char **argv) {
+
+    char *identifiant;
+    identifiant = malloc(sizeof(char)*20);
+    identifiant = argv[1];
+    char request[100] = "SELECT id_client FROM CLIENT WHERE id_client=";
+    strcat(request, identifiant);
 
     mysql_query(db->mysql, request);
 
@@ -96,8 +107,8 @@ static void doBasicDemo(db_params *db) {
     if(db->result == NULL){
         printf("There is no result\n");
     }else{
-*/
-	const char *text = "Hello World!";  // Changer ici pour ce que je veux metre dans le qrcode ( identifiant de la personne + token )
+
+	const char *text = db->result;  // Changer ici pour ce que je veux metre dans le qrcode ( identifiant de la personne + token par la suite )
 	enum qrcodegen_Ecc errCorLvl = qrcodegen_Ecc_LOW;  // Error correction level
 
 	// Make and print the QR Code symbol
@@ -108,7 +119,7 @@ static void doBasicDemo(db_params *db) {
 	if (ok)
 		printQr(qrcode);
     }
-//}
+}
 
 /*---- Utilities ----*/
 
