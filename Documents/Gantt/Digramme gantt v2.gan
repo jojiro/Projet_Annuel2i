@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Projet annuel 2i" company="" webLink="http://" view-date="2017-12-04" view-index="0" gantt-divider-location="439" resource-divider-location="300" version="2.8.5" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Projet annuel 2i" company="" webLink="http://" view-date="2017-10-01" view-index="0" gantt-divider-location="439" resource-divider-location="300" version="2.8.5" locale="fr">
     <description><![CDATA[Projet annuel 2i de Killian, Jonathan et Kenji]]></description>
-    <view zooming-state="default:6" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="223" order="0"/>
-        <field id="tpd4" name="Date de début" width="99" order="1"/>
-        <field id="tpd5" name="Date de fin" width="98" order="2"/>
+    <view zooming-state="default:9" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="220" order="0"/>
+        <field id="tpd4" name="Date de début" width="100" order="1"/>
+        <field id="tpd5" name="Date de fin" width="100" order="2"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="210" order="0"/>
@@ -33,58 +33,72 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="103" name="tâche_103" meeting="false" start="2017-12-18" duration="1" complete="0" expand="true"/>
-        <task id="104" name="tâche_104" meeting="false" start="2017-12-18" duration="1" complete="0" expand="true"/>
-        <task id="105" name="tâche_105" meeting="false" start="2017-12-18" duration="1" complete="0" expand="true"/>
-        <task id="106" name="tâche_106" meeting="false" start="2017-12-18" duration="1" complete="0" expand="true"/>
-        <task id="107" name="tâche_107" meeting="false" start="2017-12-18" duration="1" complete="0" expand="true"/>
-        <task id="108" name="tâche_108" meeting="false" start="2017-12-18" duration="1" complete="0" expand="true"/>
-        <task id="109" name="tâche_109" meeting="false" start="2017-12-18" duration="1" complete="0" expand="true"/>
-        <task id="110" name="tâche_110" meeting="false" start="2017-12-18" duration="1" complete="0" expand="true"/>
-        <task id="111" name="tâche_111" meeting="false" start="2017-12-18" duration="1" complete="0" expand="true"/>
-        <task id="57" name="Partie réseau" meeting="false" start="2018-01-08" duration="123" complete="0" expand="true">
-            <task id="75" name="Matériel" meeting="false" start="2018-01-08" duration="37" complete="0" expand="true">
-                <task id="81" name="Câblage" meeting="false" start="2018-01-08" duration="14" complete="0" expand="true">
-                    <task id="94" name="Recherche de ST" meeting="false" start="2018-01-08" duration="13" complete="0" expand="true"/>
-                    <task id="95" name="Séléction ST/BDC" meeting="false" start="2018-01-08" duration="14" complete="0" expand="true"/>
-                </task>
-                <task id="115" name="Switch/routeur" meeting="false" start="2018-01-25" duration="20" complete="0" expand="true">
-                    <task id="116" name="Séléction ST/BDC" meeting="false" start="2018-01-31" duration="9" complete="0" expand="true"/>
-                    <task id="117" name="Recherche de ST" meeting="false" start="2018-01-25" duration="20" complete="0" expand="true"/>
-                </task>
-            </task>
-            <task id="74" name="Etude" meeting="false" start="2018-01-08" duration="1" complete="0" expand="true">
-                <task id="98" name="Client existant" meeting="false" start="2018-01-08" duration="1" complete="0" expand="true"/>
-                <task id="99" name="Besoin client" meeting="false" start="2018-01-08" duration="1" complete="0" expand="true"/>
-                <task id="100" name="Validation client" meeting="false" start="2018-01-08" duration="1" complete="0" expand="true"/>
-            </task>
-            <task id="63" name="Routage" color="#8cb6ce" meeting="false" start="2018-01-16" duration="54" complete="0" expand="true">
+        <task id="57" name="Partie réseau" meeting="false" start="2018-01-16" duration="115" complete="0" expand="true">
+            <task id="63" name="Routage" color="#8cb6ce" meeting="false" start="2018-01-16" duration="115" complete="0" expand="true">
                 <task id="93" name="Recherche revendeur" meeting="false" start="2018-01-16" duration="54" complete="0" expand="true"/>
-                <task id="101" name="Vlan" meeting="false" start="2018-01-29" duration="1" complete="0" expand="false">
-                    <task id="102" name="ACL" color="#8cb6ce" meeting="false" start="2018-01-29" duration="1" complete="0" expand="true"/>
+                <task id="101" name="Vlan" meeting="false" start="2018-04-24" duration="17" complete="0" expand="true">
+                    <task id="102" name="ACL" color="#8cb6ce" meeting="false" start="2018-04-24" duration="17" complete="0" expand="true"/>
                 </task>
             </task>
-            <task id="78" name="Recette" meeting="false" start="2018-01-29" duration="1" complete="0" expand="true"/>
-            <task id="84" name="Déploiement" meeting="false" start="2018-01-29" duration="1" complete="0" expand="true"/>
-            <task id="59" name="Maquette packet tracer de l'infrastructure" color="#8cb6ce" meeting="false" start="2018-04-14" duration="10" complete="0" expand="true"/>
+            <task id="78" name="Recette?" meeting="false" start="2018-01-29" duration="1" complete="0" expand="true"/>
+            <task id="84" name="Déploiement?" meeting="false" start="2018-01-29" duration="1" complete="0" expand="true"/>
+            <task id="152" name="Matériel réseaux configurés" meeting="false" start="2018-02-01" duration="1" complete="0" expand="true"/>
+            <task id="118" name="Maquette packet tracer V1" color="#8cb6ce" meeting="false" start="2018-02-05" duration="16" complete="0" expand="true"/>
+            <task id="74" name="Etude" meeting="false" start="2018-02-20" duration="32" complete="0" expand="true">
+                <task id="98" name="Client existant" meeting="false" start="2018-02-20" duration="6" complete="0" expand="true"/>
+                <task id="99" name="Besoin client" meeting="false" start="2018-02-25" duration="19" complete="0" expand="true"/>
+                <task id="100" name="Validation client" meeting="false" start="2018-03-15" duration="9" complete="0" expand="true"/>
+            </task>
+            <task id="75" name="Matériel" meeting="false" start="2018-02-20" duration="29" complete="0" expand="true">
+                <task id="81" name="Câblage" meeting="false" start="2018-02-20" duration="29" complete="0" expand="true">
+                    <task id="94" name="Recherche de ST" color="#8cb6ce" meeting="false" start="2018-02-20" duration="24" complete="0" expand="true"/>
+                    <task id="95" name="Séléction ST/BDC" color="#8cb6ce" meeting="false" start="2018-03-15" duration="6" complete="0" expand="true"/>
+                </task>
+                <task id="115" name="Switch/routeur" meeting="false" start="2018-02-20" duration="29" complete="0" expand="true">
+                    <task id="117" name="Recherche de ST" meeting="false" start="2018-02-20" duration="24" complete="0" expand="true"/>
+                    <task id="116" name="Séléction ST/BDC" color="#8cb6ce" meeting="false" start="2018-03-15" duration="6" complete="0" expand="true"/>
+                </task>
+            </task>
+            <task id="59" name="Maquette packet tracer Finale" color="#8cb6ce" meeting="false" start="2018-04-01" duration="23" complete="0" expand="true"/>
             <task id="76" name="Config" meeting="false" start="2018-04-27" duration="14" complete="0" expand="true">
                 <task id="97" name="VPN IPsec" color="#8cb6ce" meeting="false" start="2018-04-27" duration="14" complete="0" expand="true"/>
             </task>
         </task>
-        <task id="92" name="tâche_92" meeting="false" start="2018-01-08" duration="1" complete="0" expand="true"/>
-        <task id="20" name="Gantt et finances" color="#8cb6ce" meeting="false" start="2018-02-05" duration="14" complete="0" expand="true">
-            <task id="24" name="Diagramme de Gantt" color="#8cb6ce" meeting="false" start="2018-02-05" duration="7" complete="0" expand="true">
-                <task id="29" name="Reste du diagramme" color="#8cb6ce" meeting="false" start="2018-02-05" duration="7" complete="0" expand="true"/>
-                <task id="30" name="Partie réseau" color="#8cb6ce" meeting="false" start="2018-02-06" duration="4" complete="0" expand="true"/>
+        <task id="20" name="Gantt et finances" color="#8cb6ce" meeting="false" start="2018-02-05" duration="95" complete="0" expand="true">
+            <task id="24" name="Diagramme de Gantt" color="#8cb6ce" meeting="false" start="2018-02-05" duration="95" complete="0" expand="true">
+                <task id="29" name="Reste du diagramme" color="#8cb6ce" meeting="false" start="2018-02-05" duration="25" complete="0" expand="true"/>
+                <task id="30" name="Partie réseau" color="#8cb6ce" meeting="false" start="2018-02-11" duration="16" complete="0" expand="true"/>
+                <task id="122" name="Mise à jour" color="#8cb6ce" meeting="false" start="2018-03-01" duration="71" complete="0" expand="true"/>
             </task>
             <task id="22" name="Chiffrage financier" color="#8cb6ce" meeting="false" start="2018-02-12" duration="7" complete="0" expand="true"/>
+            <task id="124" name="Mise à jour chiffrage" meeting="false" start="2018-02-18" duration="82" complete="0" expand="true"/>
         </task>
         <task id="4" name="Fixation Information projet" color="#8cb6ce" meeting="false" start="2018-02-05" duration="11" complete="0" expand="true">
+            <task id="49" name="Template et mise en forme" meeting="false" start="2018-02-05" duration="11" complete="0" expand="true"/>
             <task id="18" name="Nom du projet" color="#8cb6ce" meeting="false" start="2018-02-05" duration="6" complete="0" expand="true"/>
             <task id="6" name="Logo du projet" color="#8cb6ce" meeting="false" start="2018-02-05" duration="5" complete="0" expand="true"/>
-            <task id="49" name="Template et mise en forme" meeting="false" start="2018-02-05" duration="11" complete="0" expand="true"/>
+        </task>
+        <task id="142" name="Mission 2" meeting="false" start="2018-02-11" duration="89" complete="0" expand="true">
+            <task id="147" name="Choix du langage et de l'architecture logicielle de la mission 2" color="#8cb6ce" meeting="false" start="2018-02-11" duration="47" complete="0" expand="true"/>
+            <task id="149" name="Gestion tickets" meeting="false" start="2018-03-29" duration="26" complete="0" expand="true"/>
+            <task id="157" name="Fin mission 2" meeting="false" start="2018-04-24" duration="17" complete="0" expand="true"/>
+        </task>
+        <task id="150" name="Dossier" meeting="false" start="2018-02-11" duration="89" complete="0" expand="true"/>
+        <task id="130" name="Mission 1" meeting="false" start="2018-02-11" duration="47" complete="0" expand="true">
+            <task id="144" name="Application web" color="#8cb6ce" meeting="false" start="2018-02-11" duration="47" complete="0" expand="true">
+                <task id="158" name="schéma de la bdd (mission 1) sous forme de MCD" meeting="false" start="2018-02-11" duration="24" complete="0" expand="true"/>
+                <task id="159" name="Dévellopement" meeting="false" start="2018-03-06" duration="24" complete="0" expand="true"/>
+            </task>
+            <task id="137" name="descriptif fonctionel détaillé" meeting="false" start="2018-02-11" duration="24" complete="0" expand="true"/>
+        </task>
+        <task id="141" name="Fonctionnalités détaillées" meeting="false" start="2018-02-11" duration="47" complete="0" expand="true"/>
+        <task id="125" name="Charte graphique avec exemple écrit" color="#8cb6ce" meeting="false" start="2018-02-11" duration="24" complete="0" expand="true"/>
+        <task id="127" name="maquette de l'application web" meeting="false" start="2018-02-11" duration="24" complete="0" expand="true"/>
+        <task id="131" name="Partie entrées sorties" meeting="false" start="2018-02-11" duration="15" complete="0" expand="true">
+            <task id="139" name="gestion fichier xml" meeting="false" start="2018-02-11" duration="15" complete="0" expand="true"/>
         </task>
         <task id="31" name="RENDU 1 [G]" color="#8cb6ce" meeting="true" start="2018-02-20" duration="0" complete="0" priority="2" expand="true"/>
+        <task id="156" name="tâche_156" meeting="false" start="2018-03-01" duration="1" complete="0" expand="true"/>
         <task id="39" name="RENDU 2 [S]" color="#8cb6ce" meeting="true" start="2018-03-07" duration="0" complete="0" priority="2" expand="true"/>
         <task id="41" name="RENDU 3 [S]" color="#8cb6ce" meeting="true" start="2018-03-29" duration="0" complete="0" priority="2" expand="true"/>
         <task id="44" name="RENDU 4 [S&amp;G]" color="#8cb6ce" meeting="true" start="2018-04-23" duration="0" complete="0" priority="2" expand="true"/>
