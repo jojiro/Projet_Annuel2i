@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1520415715 source:c:\users\azn_j\desktop\projet_annuel2i_save\xml\xml\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<winsock.h>
+	<MYSQL/mysql.h>
+

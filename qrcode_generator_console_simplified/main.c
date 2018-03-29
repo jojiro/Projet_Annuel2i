@@ -30,61 +30,26 @@
 #include <stdlib.h>
 #include <string.h>
 #include "qrcodegen.h"
-//bibliotheques bdd
-#include <winsock.h>
-#include <MYSQL/mysql.h>
+// si on execute avec le compilateur ..
+#include "bitmap/qdbmp.h"
+// si on execute le programme en console
+//#include "qdbmp.h"
 
-// STRUCTURES
-typedef struct db_params{
-    MYSQL *mysql;
-    MYSQL_RES *result;
-}db_params;
 
 
 // Function prototypes
-static void doBasicDemo(db_params *db,char **argv);
+static void doBasicDemo(int value);
 static void printQr(const uint8_t qrcode[]);
 
 
 // The main application program.
-int main(int argc, char **argv) {
+int main(int argc,char **argv) {
+    int value = atoi(argv[1]);
+    /* Pour tester la valeur de argv
+    printf("  valeur argv : %d \n",value);
+    */
 
-    if(argc>2){
-        printf("Nombre d'arguments incorrecte \n il ne faut que l'identifiant de la personne créer, en argument. Merci.\n");
-        return -1;
-    }
-    // ici c'est juste un test à commenter par la suite.
-    // on print l'identifiant pour voir si il correspond
-    printf("identifiant : %c \n", *(argv + 1));
-
-    //Déclaration du pointeur de structure de type MYSQL
-    MYSQL *mysql = NULL;
-    // Déclaration des objets pour db_params db
-    MYSQL_RES *result = NULL;
-
-    //Initialisation de MySQL
-    mysql = mysql_init(mysql);
-    //Options de connexion
-    mysql_options(mysql,MYSQL_READ_DEFAULT_GROUP,"option");
-
-    //Si la connexion réussie...
-
-    if(mysql_real_connect(mysql,"localhost","root","","projet_annuel",0,NULL,0)) // le nom de la bdd c'est projet_annuel
-    { // pour les MAC le mot de passe pour la bdd est "root" et pas ""
-        mysql_close(mysql);
-    }
-    else
-    {
-        printf("Une erreur s'est produite lors de la connexion à la BDD!");
-    }
-
-    // Initialisation d'une structure pour les informations de connexion en bdd
-    db_params db = { .mysql = mysql, .result = result};
-
-	doBasicDemo(&db,argv); // ici il y a un soucis pour passer en argument argv qui est double pointeur.
-
-    mysql_close(mysql);
-    mysql_free_result(result);
+	doBasicDemo(value);
 	return EXIT_SUCCESS;
 }
 
@@ -93,22 +58,30 @@ int main(int argc, char **argv) {
 /*---- A modifier à convenance ----*/
 
 // Creates a single QR Code, then prints it to the console.
-static void doBasicDemo(db_params *db,char **argv) {
+static void doBasicDemo(int value) {
 
-    char *identifiant;
-    identifiant = malloc(sizeof(char)*20);
-    identifiant = argv[1];
-    char request[100] = "SELECT id_client FROM CLIENT WHERE id_client=";
-    strcat(request, identifiant);
+    char *identifiant = NULL;
+    identifiant = malloc(sizeof(int)*100);
+    if(identifiant == NULL){
+       printf("probleme d'allocation memoire id\n");
+       }
 
-    mysql_query(db->mysql, request);
+    char *clef = NULL;
+    clef = malloc(sizeof(char)*50);
+         if(clef == NULL){
+       printf("probleme d'allocation memoire clef\n");
+       }
 
-    db->result = mysql_use_result(db->mysql);
-    if(db->result == NULL){
-        printf("There is no result\n");
-    }else{
+    sprintf(identifiant,"%d",value);
 
-	const char *text = db->result;  // Changer ici pour ce que je veux metre dans le qrcode ( identifiant de la personne + token par la suite )
+    /*strcpy(identifiant,argv[1]);
+    if(clef != NULL ){
+    strcat(identifiant,clef);
+    }
+    printf("ok");
+    printf("\n id et clef : %s \n ",*identifiant);
+    */
+	const char *text = identifiant;  // Changer ici pour ce que je veux metre dans le qrcode ( identifiant de la personne + token )
 	enum qrcodegen_Ecc errCorLvl = qrcodegen_Ecc_LOW;  // Error correction level
 
 	// Make and print the QR Code symbol
@@ -118,15 +91,16 @@ static void doBasicDemo(db_params *db,char **argv) {
 		qrcodegen_VERSION_MIN, qrcodegen_VERSION_MAX, qrcodegen_Mask_AUTO, true);
 	if (ok)
 		printQr(qrcode);
-    }
 }
 
 /*---- Utilities ----*/
 
 // Prints the given QR Code to the console.
 static void printQr(const uint8_t qrcode[]) {
+
 	int size = qrcodegen_getSize(qrcode);
 	int border = 4;
+	static FILE *file;
 	for (int y = -border; y < size + border; y++) {
 		for (int x = -border; x < size + border; x++) {
 			fputs((qrcodegen_getModule(qrcode, x, y) ? "##" : "  "), stdout); // remplacer ## par pixel noir et espace par pixel blanc
@@ -135,5 +109,3 @@ static void printQr(const uint8_t qrcode[]) {
 	}
 	fputs("\n", stdout);
 }
-
-/* ----- functions database -----*/

@@ -33,3 +33,42 @@
 	<stddef.h>
 	<stdint.h>
 
+1521495601 source:c:\users\azn_j\desktop\projet_annuel2i_save\qrcode_generator_console_simplified\main.c
+	<stdbool.h>
+	<stddef.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"qrcodegen.h"
+	<winsock.h>
+	<MYSQL/mysql.h>
+
+1518604644 source:c:\users\azn_j\desktop\qrcode_generator_console_simplified\qrcodegen.c
+	<assert.h>
+	<limits.h>
+	<stdlib.h>
+	<string.h>
+	"qrcodegen.h"
+
+1518604094 c:\users\azn_j\desktop\qrcode_generator_console_simplified\qrcodegen.h
+	<stdbool.h>
+	<stddef.h>
+	<stdint.h>
+
+1522338185 source:c:\users\azn_j\desktop\qrcode_generator_console_simplified\main.c
+	<stdbool.h>
+	<stddef.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"qrcodegen.h"
+	"bitmap/qdbmp.h"
+
+1175889580 source:c:\users\azn_j\desktop\qrcode_generator_console_simplified\bitmap\qdbmp.c
+	"qdbmp.h"
+	<stdlib.h>
+	<string.h>
+
+1175933146 c:\users\azn_j\desktop\qrcode_generator_console_simplified\bitmap\qdbmp.h
+	<stdio.h>
+

@@ -2,24 +2,21 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="qrcode_generator_console_simplified" />
+		<Option title="xml" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/qrcode_generator_console_simplified" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/xml" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
-				<Linker>
-					<Add library="../../../../../../../../Program Files (x86)/CodeBlocks/MinGW/mingw32/lib/libmysqlclient.a" />
-				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/qrcode_generator_console_simplified" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/xml" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -34,18 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="bitmap/qdbmp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="bitmap/qdbmp.h" />
-		<Unit filename="libmysql.dll" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="qrcodegen.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="qrcodegen.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
