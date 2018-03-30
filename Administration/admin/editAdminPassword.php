@@ -7,7 +7,7 @@
 
         <hr>
 
-      <div class="container">
+        <div class="container">
             <form method="POST" action="changeAdminPassword.php" class="form-horizontal" role="form">
                 <h2>Modification du mot de passe</h2>
 

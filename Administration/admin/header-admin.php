@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	require "../functions.php";
-	require "../conf.inc.php";
+	require "functions.php";
+	require "conf.inc.php";
 
 		// test connexion au serveur
 	try{
@@ -16,11 +16,11 @@
 	$user -> execute(["email" => $_SESSION['email']]);
 	$user = $user -> fetch();
 
-	if(isset($_SESSION['id_utilisateur'])) {
+	if(isset($_SESSION['id'])) {
 		if($user["is_admin"] == 0 || $user["is_admin"] == NULL) header("Location: ../page_error_404.php");
 	}
 
-	if (!isset($_SESSION['id_utilisateur'])) {
+	if (!isset($_SESSION['id'])) {
 		header("Location: ../page_error_404.php");
 	}
 ?>
@@ -38,7 +38,7 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/admin.css">
   	
-    <title>Panel Admin | Century Student</title>
+    <title>Panel Admin | WorkinSpace</title>
 </head>
 <body>
 	<header class="cd-main-header">
@@ -65,18 +65,11 @@
 	<main class="cd-main-content">
 		<nav class="cd-side-nav">
 			<ul>
-				<li class="cd-label">Pricipal</li>
+				<li class="cd-label">Principal</li>
 				<li><a href="../admin"><i class="fa fa-home admin-side-icon" aria-hidden="true"></i>Accueil</a></li>
 				<li><a href="admins.php"><i class="fa fa-user-secret admin-side-icon" aria-hidden="true"></i>Administrateurs</a></li>
 				<li><a href="users.php"><i class="fa fa-users admin-side-icon" aria-hidden="true"></i>Utilisateurs</a></li>
-				<li><a href="displayLocations.php"><i class="fa fa-list-alt admin-side-icon" aria-hidden="true"></i>Locations</a></li>
-				<li><a href="displayVentes.php"><i class="fa fa-list-alt admin-side-icon" aria-hidden="true"></i>Ventes</a></li>
-			</ul>
-
-			<ul>
-				<li class="cd-label">Secondaire</li>
-				<li><a href="addAnnonce.php">Ajouter une annonce</a></li>
-			</ul>
+				
 
 		</nav>
 	</main>
