@@ -38,18 +38,14 @@
 
 
 // Function prototypes
-static void doBasicDemo(int value);
+static void doBasicDemo(char *);
 static void printQr(const uint8_t qrcode[]);
 
 
 // The main application program.
 int main(int argc,char **argv) {
-    int value = atoi(argv[1]);
-    /* Pour tester la valeur de argv
-    printf("  valeur argv : %d \n",value);
-    */
-
-	doBasicDemo(value);
+    //int value = atoi(argv[1]);
+	doBasicDemo(argv[1]);
 	return EXIT_SUCCESS;
 }
 
@@ -58,30 +54,16 @@ int main(int argc,char **argv) {
 /*---- A modifier à convenance ----*/
 
 // Creates a single QR Code, then prints it to the console.
-static void doBasicDemo(int value) {
+static void doBasicDemo(char *argument1) {
 
-    char *identifiant = NULL;
-    identifiant = malloc(sizeof(int)*100);
-    if(identifiant == NULL){
-       printf("probleme d'allocation memoire id\n");
-       }
-
-    char *clef = NULL;
-    clef = malloc(sizeof(char)*50);
-         if(clef == NULL){
-       printf("probleme d'allocation memoire clef\n");
-       }
-
-    sprintf(identifiant,"%d",value);
-
-    /*strcpy(identifiant,argv[1]);
-    if(clef != NULL ){
-    strcat(identifiant,clef);
+    char *inter;
+    inter = malloc(sizeof(char)*(strlen(argument1)+ 1) );
+    if (inter == NULL){
+        printf("erreur allocation \n");
     }
-    printf("ok");
-    printf("\n id et clef : %s \n ",*identifiant);
-    */
-	const char *text = identifiant;  // Changer ici pour ce que je veux metre dans le qrcode ( identifiant de la personne + token )
+    strcpy(inter,argument1);
+
+	const char *text = inter;  // Changer ici pour ce que je veux metre dans le qrcode ( identifiant de la personne + token )
 	enum qrcodegen_Ecc errCorLvl = qrcodegen_Ecc_LOW;  // Error correction level
 
 	// Make and print the QR Code symbol
@@ -100,7 +82,6 @@ static void printQr(const uint8_t qrcode[]) {
 
 	int size = qrcodegen_getSize(qrcode);
 	int border = 4;
-	static FILE *file;
 	for (int y = -border; y < size + border; y++) {
 		for (int x = -border; x < size + border; x++) {
 			fputs((qrcodegen_getModule(qrcode, x, y) ? "##" : "  "), stdout); // remplacer ## par pixel noir et espace par pixel blanc
