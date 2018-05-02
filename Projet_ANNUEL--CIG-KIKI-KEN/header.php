@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -13,12 +15,12 @@
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
 
-  <!-- 
+  <!--
 	//////////////////////////////////////////////////////
 
-	FREE HTML5 TEMPLATE 
+	FREE HTML5 TEMPLATE
 	DESIGNED & DEVELOPED by FREEHTML5.CO
-		
+
 	Website: 		http://freehtml5.co/
 	Email: 			info@freehtml5.co
 	Twitter: 		http://twitter.com/fh5co
@@ -42,7 +44,7 @@
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -73,7 +75,7 @@
 				<div class="navbar-header">
 					<!-- Mobile Toggle Menu Button -->
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-					<a class="navbar-brand" href="./"><span>W</span>orknin'<span>S</span>pace</a> 
+					<a class="navbar-brand" href="./"><span>W</span>orknin'<span>S</span>pace</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
@@ -83,7 +85,15 @@
 						<li><a href="#" data-nav-section="pricing"><span>Tarifs</span></a></li>
 						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
 						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>
-						<li class="call-to-action"><a class="external" href="connexion"><span>Se connecter</span></a></li>
+						<li class="call-to-action">
+							<?php if (isset($_SESSION["id_utilisateur"]) && !empty($_SESSION["id_utilisateur"])){
+								echo "<a href='deconnexion' class='external'><span>Se deconnecter</span></a>";
+                                echo "<a href='subscribe.php' class='external'><span>Abonnement</span></a>";
+							}else{
+								echo "<a class='external' href='connexion'><span>Se connecter</span></a>";
+							}
+							?>
+							</li>
 					</ul>
 				</div>
 			</nav>
