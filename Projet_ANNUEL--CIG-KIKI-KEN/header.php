@@ -88,7 +88,7 @@ session_start();
 						<li class="call-to-action">
 							<?php if (isset($_SESSION["id_utilisateur"]) && !empty($_SESSION["id_utilisateur"])){
 								echo "<a href='deconnexion' class='external'><span>Se deconnecter</span></a>";
-                                echo "<a href='subscribe.php' class='external'><span>Abonnement</span></a>";
+                                echo "<a href='abonnement.php' class='external'><span>Abonnement</span></a>";
 							}else{
 								echo "<a class='external' href='connexion'><span>Se connecter</span></a>";
 							}

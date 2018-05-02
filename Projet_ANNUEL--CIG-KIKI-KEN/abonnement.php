@@ -60,7 +60,7 @@ try{
                         <input name="tax" type="hidden" value="0.00" />
                         <input name="return" type="hidden" value="http://localhost/Projet_ANNUEL--CIG-KIKI-KEN/payment_successful.php" />
                         <input name="cancel_return" type="hidden" value="http://localhost/Projet_ANNUEL--CIG-KIKI-KEN/cancel_payment.php" />
-                        <input name="notify_url" type="hidden" value="http://localhost/Projet_ANNUEL--CIG-KIKI-KEN/ipn.phpT" />
+                        <input name="notify_url" type="hidden" value="http://localhost/Projet_ANNUEL--CIG-KIKI-KEN/ipn.php" />
                         <input name="cmd" type="hidden" value="_xclick" />
                         <input name="business" type="hidden" value="kenjiyoroba-facilitator@yahoo.fr" />
                         <input name="item_name" type="hidden" value="Abonnement Mensuel WorknShare" />
