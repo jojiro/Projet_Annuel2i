@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 29 Mars 2018 à 20:06
+-- Généré le :  Mer 02 Mai 2018 à 12:44
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -28,10 +28,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `booking` (
   `id_room` int(11) NOT NULL,
-  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `day` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `hour` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `begin_booking` datetime NOT NULL,
   `end_booking` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `booking`
+--
+
+INSERT INTO `booking` (`id_room`, `name`, `day`, `hour`, `begin_booking`, `end_booking`) VALUES
+(1, 'Salle Reunion', '2018-04-26 18:38:37', '2018-04-26 16:38:37', '2018-04-26 00:00:00', '2018-04-26 02:12:39'),
+(2, 'Bureau Ovale', '2018-04-26 18:39:19', '2018-04-26 16:39:19', '2018-04-27 14:17:04', '2018-04-27 17:19:17');
 
 -- --------------------------------------------------------
 
@@ -84,6 +94,27 @@ INSERT INTO `location` (`id_location`, `town`, `address`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `offers`
+--
+
+CREATE TABLE `offers` (
+  `id` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `duration` varchar(50) NOT NULL,
+  `price` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `offers`
+--
+
+INSERT INTO `offers` (`id`, `name`, `duration`, `price`) VALUES
+(1, 'Abonnement Mensuel', '1', '75'),
+(2, 'Abonnement Annuel', '12', '600');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `renting_equipment`
 --
 
@@ -115,11 +146,10 @@ CREATE TABLE `room` (
 --
 
 CREATE TABLE `subscription` (
-  `id_subscription` int(11) NOT NULL,
-  `type_subscription` varchar(255) NOT NULL,
-  `price_with_engagement` double DEFAULT NULL,
-  `price_without_engagement` double DEFAULT NULL,
-  `description` longtext
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `amount` int(11) NOT NULL,
+  `date_payment` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -129,20 +159,32 @@ CREATE TABLE `subscription` (
 --
 
 CREATE TABLE `users` (
-  `gender` char(1) NOT NULL,
   `name` varchar(50) NOT NULL,
   `surname` varchar(50) NOT NULL,
   `id` int(11) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `password2` varchar(50) NOT NULL,
+  `password` varchar(60) NOT NULL,
   `birthday` date NOT NULL,
   `phone` char(10) DEFAULT NULL,
-  `country` char(2) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `is_deleted` tinyint(1) NOT NULL,
+  `is_deleted` tinyint(1) DEFAULT '0',
   `date_updated` timestamp NULL DEFAULT NULL,
-  `is_admin` tinyint(1) NOT NULL
+  `is_admin` tinyint(1) DEFAULT '0',
+  `expiration` datetime DEFAULT NULL,
+  `payer_id` varchar(255) DEFAULT NULL,
+  `profile_id` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `users`
+--
+
+INSERT INTO `users` (`name`, `surname`, `id`, `password`, `birthday`, `phone`, `email`, `is_deleted`, `date_updated`, `is_admin`, `expiration`, `payer_id`, `profile_id`) VALUES
+('Kenji', 'Yoroba', 6, '$2y$10$zL4s.caVx1al2ajy0FzqpuuNdGeFmBcD1ha7VVqCAbSmYBXFvTM/a', '1998-05-12', '0659530959', 'kenjiyoroba@yahoo.fr', 0, NULL, 1, NULL, NULL, NULL),
+('testo', 'test', 7, '$2y$10$QfLqAvRORPq7I4kz3yTjW.xWEOWxtSnQzpHdEFb8wbddAbcCMNpE6', '1990-07-08', '0687542165', 'test@gmail.fr', 0, NULL, 0, NULL, NULL, NULL),
+('Jalal', 'Joachim', 4, '$2y$10$l1Qy2Y5.mMv4otKRKSuPLO26VAudFEnUfGhy2v9Lg72y3HEfF0cqa', '1998-01-12', '0659530959', 'kill@yahoo.fr', 0, NULL, 0, NULL, NULL, NULL),
+('Precarite', 'precarite', 8, '$2y$10$imUCzaNpT9Fl4m1FD/Q8mukfLi/MXUgh.TL6ZXF2NEBWrjt0GitOu', '1997-07-12', '0612457898', 'precarite@yahoo.fr', 0, NULL, 0, NULL, NULL, NULL),
+('Chalana', 'Mangue', 9, '$2y$10$yIdpH4WNrrctBxEAqA3B9eRYDr71dUb/SW3190BwP3w2.LzTmmLSa', '1989-12-14', '0612459878', 'chalana@yahoo.fr', 0, NULL, 0, NULL, NULL, NULL),
+('KY', 'Stephalafele', 10, '$2y$10$3zcvYNkLhqygBcUAy/p.PO1AQ8Hn9s1z4XBgBb7qTeNQv4ij2mf6y', '1992-04-23', '0632459875', 'stephane@yahoo.fr', 0, NULL, 0, NULL, NULL, NULL);
 
 --
 -- Index pour les tables exportées
@@ -152,7 +194,7 @@ CREATE TABLE `users` (
 -- Index pour la table `booking`
 --
 ALTER TABLE `booking`
-  ADD PRIMARY KEY (`id_room`,`id`);
+  ADD PRIMARY KEY (`id_room`);
 
 --
 -- Index pour la table `employee`
@@ -173,6 +215,12 @@ ALTER TABLE `location`
   ADD PRIMARY KEY (`id_location`);
 
 --
+-- Index pour la table `offers`
+--
+ALTER TABLE `offers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `renting_equipment`
 --
 ALTER TABLE `renting_equipment`
@@ -188,7 +236,7 @@ ALTER TABLE `room`
 -- Index pour la table `subscription`
 --
 ALTER TABLE `subscription`
-  ADD PRIMARY KEY (`id_subscription`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `users`
@@ -211,6 +259,11 @@ ALTER TABLE `equipment`
 ALTER TABLE `location`
   MODIFY `id_location` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
+-- AUTO_INCREMENT pour la table `offers`
+--
+ALTER TABLE `offers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT pour la table `room`
 --
 ALTER TABLE `room`
@@ -219,12 +272,12 @@ ALTER TABLE `room`
 -- AUTO_INCREMENT pour la table `subscription`
 --
 ALTER TABLE `subscription`
-  MODIFY `id_subscription` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
