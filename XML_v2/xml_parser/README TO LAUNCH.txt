@@ -1,0 +1,1 @@
+Pour créer le fichier XML il faut entrer le nom du fichier en argument 1 sinon affichage console 
