@@ -12,6 +12,8 @@
 	<form method="POST" action="ReservationGestion.php">
     <div class="form-group">
 			<br>
+
+	<!-- LIEUX -->
     <label>Les Lieux</label>
 		<select class="form-control" name="place_select">
 			<option value="place-default">Selectionner le lieu</option>
@@ -24,12 +26,14 @@
 		foreach ($location as $key) {
 			echo '<option value="'.$key["id_location"].'">'.location_name($key["id_location"]).'</option>';
 		}
-
 		 ?>
     </select>
+<!-- -->
+
+	<!-- SALLE -->
 		<div id="print_room">
 		<label for="exampleFormControlSelect1">Selectionner La Salle</label>
-		<select class="form-control" name="select_room" onchange="print_room()">
+		<select class="form-control" name="select_room" onchange="book_print_room()">
 			<?php
 			if( isset($POST["location"])){
 				$rooms = room($POST["location"]);
@@ -40,6 +44,19 @@
 	 		}
 			 ?>
 		 </select>
+	<!-- -->
+
+	<!-- HORAIRES -->
+		 <select class="form-control" name="select_hour" onchange="print_hour()">
+			 <?php
+			 if( isset($POST["room"])){
+
+			 }
+
+
+			  ?>
+			</select>
+	<!-- -->
 	 </div>
     <input class="champ" id="btnsubmit" type="submit" value="Reserver">
   </form>
