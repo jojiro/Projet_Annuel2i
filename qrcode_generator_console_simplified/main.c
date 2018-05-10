@@ -33,7 +33,7 @@
 // si on execute avec le compilateur ..
 #include "bitmap/qdbmp.h"
 // si on execute le programme en console
-//#include "qdbmp.h"
+#include "qdbmp.h"
 
 
 
