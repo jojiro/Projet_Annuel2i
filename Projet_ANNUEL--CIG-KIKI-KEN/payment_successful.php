@@ -2,6 +2,8 @@
 
 require "header.php";
 require "conf.inc.php" ;
+require "functions.php";
+
 
 
 try{
@@ -21,8 +23,8 @@ try{
 <head>
   <meta charset="utf-8">
   <title>Titre de la page</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
 </head>
 <body>
         <div class="topbar">
@@ -39,6 +41,10 @@ try{
                 <h1>Felicitations le paiement pour votre abonnement a été validé </h1>
 
 
+                    <?php
+                    showArray($_SESSION);
+                    showArray($_POST);
+                    ?>
 
             </div>
         </div>

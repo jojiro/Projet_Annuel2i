@@ -3,15 +3,13 @@
 
 	showArray($_POST);
 
-	if (count($_POST) == 10
+	if (count($_POST) == 8
 		&& !empty($_POST["id"])
-		&& !empty($_POST["gender"])
-		&& !empty($_POST["name"])
+        && !empty($_POST["name"])
 		&& !empty($_POST["surname"])
 		&& !empty($_POST["email"])
 		&& !empty($_POST["birthday"])
-		&& !empty($_POST["country"])
-		&& isset($_POST["phone"])
+        && isset($_POST["phone"])
 		&& isset($_POST["is_deleted"])
 		&& isset($_POST["is_admin"])
 		) {
@@ -44,7 +42,7 @@
 			$error = true;
 			$listOfErrorsModif[] = 3;
 			echo '3 ';
-		}		
+		}
 
 		if(strlen($_POST["birthday"])==10 ){
 
@@ -61,7 +59,7 @@
 				$year = $arrayBirthday[2];
 				$month = $arrayBirthday[1];
 				$day = $arrayBirthday[0];
-				
+
 			}else{
 				$error = true;
 				$listOfErrorsModif[] = 4;
@@ -101,36 +99,24 @@
 			echo '8 ';
 		}
 
-		if (!array_key_exists($_POST["country"], $listOfCountry)) {
-			$error = true;
-			$listOfErrorsModif[] = 9;
-			echo '9 ';
-		}
-		if (!array_key_exists($_POST["gender"], $listOfGender)) {
-			$error = true;
-			$listOfErrorsModif[] = 10;
-			echo '10 ';
-		}
 
 		if ($error) {
 			$_SESSION["errors_modif"] = $listOfErrorsModif;
 			$_SESSION["userId"] = $_POST["id"];
 			header("Location: editUser.php");
 		}else {
-			
+
 			$now = date('Y-m-d H:i:s');
 
-			$query = $db->prepare("UPDATE users SET gender = :gender, name = :name, surname = :surname, email = :email, birthday = :birthday, country = :country, phone = :phone, date_updated = :date_updated, is_deleted = :is_deleted, is_admin = :is_admin WHERE id = :id");
+			$query = $db->prepare("UPDATE users SET  name = :name, surname = :surname, email = :email, birthday = :birthday, phone = :phone, is_deleted = :is_deleted, is_admin = :is_admin WHERE id = :id");
 
 			$query->execute([
-					"gender"=>$_POST["gender"],
+
 					"name"=>strtoupper($_POST["name"]),
 					"surname"=>ucfirst($_POST["surname"]),
 					"email"=>$_POST["email"],
 					"birthday"=>$year."-".$month."-".$day,
-					"country"=>$_POST["country"],
 					"phone"=>$_POST["phone"],
-					"date_updated"=>$now,
 					"is_deleted"=>$_POST["is_deleted"],
 					"is_admin"=>$_POST["is_admin"],
 					"id"=>$_POST["id"]

@@ -8,7 +8,7 @@
                 <div class="text-inner">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <h1 class="to-animate">Workin'Space</h1>
+                            <h1 class="to-animate">Work'n Share</h1>
                             <h2 class="to-animate">Des solutions simple et rapide pour travailler dans les meilleures conditions </h2>
                             <div class="call-to-action">
                                 <?php if (isset($_SESSION["id_utilisateur"]) && !empty($_SESSION["id_utilisateur"])){
@@ -77,9 +77,9 @@
                                         <img src="images/person2.jpg" alt="user">
                                     </figure>
                                     <blockquote>
-                                        <p>"La solution qui m'a été proposée par Workin'Space m'as permis de me consacrer corps et âme sur mon projet et d'atteindre des niveaux de concentration et de productivité seulement possible dans un tel environnement."</p>
+                                        <p>"La solution qui m'a été proposée par Work'n Share m'as permis de me consacrer corps et âme sur mon projet et d'atteindre des niveaux de concentration et de productivité seulement possible dans un tel environnement."</p>
                                     </blockquote>
-                                    <span>Xavier Niel, via <a href="#" class="twitter">Twitter</a></span>
+                                    <span>Killian Tissier, via <a href="#" class="twitter">Twitter</a></span>
                                 </div>
                             </div>
                             <div class="item">
@@ -99,7 +99,7 @@
                                         <img src="images/person2.jpg" alt="user">
                                     </figure>
                                     <blockquote>
-                                        <p>"Grâce à Workin'Space j'ai pû lancer ma start up dans un environnement favorable et louer des équipment qui m'ont permis d'avancer trés rapidement ."</p>
+                                        <p>"Grâce à Work'N Share j'ai pû lancer ma start up dans un environnement favorable et louer des équipment qui m'ont permis d'avancer trés rapidement ."</p>
                                     </blockquote>
                                     <span>Pierre Belmart, via <a href="#" class="twitter">Twitter</a></span>
                                 </div>
@@ -113,58 +113,7 @@
 
 
 
-    <section id="fh5co-pricing" data-section="pricing">
-        <div class="fh5co-pricing">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 section-heading text-center">
-                        <h2 class="to-animate">Des solutions pour tout le monde</h2>
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 subtext">
-                                <h3 class="to-animate">Que vous soyez freelance en recherche d'un environnment studieux ou chef d'équipe cherchant du matériel adéquat à ses besoins, nous avons la solution pour vous. </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="pricing">
-                        <div class="col-md-3">
-                            <div class="price-box to-animate-2">
-                                <h2 class="pricing-plan">Formule à l'heure</h2>
-                                <div class="price"><sup class="currency">€</sup>1<small>/heure</small></div>
-                                <p>Payez en fonction du temps dont vous avez réellement besoin.</p>
-                                <a href="#" class="btn btn-select-plan btn-sm">Choisir cette formule</a>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-3">
-                            <div class="price-box to-animate-2 popular">
-                                <h2 class="pricing-plan pricing-plan-offer">Formule au mois <span>Illimité</span></h2>
-                                <div class="price"><sup class="currency">€</sup>80<small>/mois</small></div>
-                                <p>La formule idéale pour profiter de tout les atouts que Workin'Space mets à votre disposition. </p>
-                                <a href="#" class="btn btn-select-plan btn-sm">Choisir cette formule</a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="price-box to-animate-2 popular">
-                                <h2 class="pricing-plan pricing-plan-offer">Formule 6 mois <span>2 mois offert</span></h2>
-                                <div class="price"><sup class="currency">€</sup>320<small>/mois</small></div>
-                                <p>La formule parfaite pour donner vie à vos plus gros projets. </p>
-                                <a href="#" class="btn btn-select-plan btn-sm">Choisir cette formule</a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="price-box to-animate-2">
-                                <h2 class="pricing-plan">Les services</h2>
-                                <p>IMPRESSION <br>Noir et Blanc: 0.07€<br>Couleur: 0.30€<br>Scan: Gratuit<br><br>SALLE DE RÉUNION<br>5€/heure<br><br>BOISSON ILLIMITÉ<br>Café, Soda, Eau... </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             <!--
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 to-animate">
@@ -196,7 +145,7 @@
                             <i class="icon-chemistry to-animate-2"></i>
                             <div class="fh5co-post to-animate">
                                 <h3>Services à disposition</h3>
-                                <p>Que ce soit un besoin de matériel informatique ou un manque de boisson cafféiné, Workin'Space est équipé pour répondre à vos demandes.</p>
+                                <p>Que ce soit un besoin de matériel informatique ou un manque de boisson cafféiné, Work'N Share est équipé pour répondre à vos demandes.</p>
                             </div>
                         </div>
                     </div>
@@ -330,8 +279,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="box-faq to-animate-2">
-                            <h3>Qu'est-ce que Workin'Space?</h3>
-                            <p>Workin'Space est une solution de location de d'espaces de travail. Nous vous fournissons espaces, matériel, boissons et connexion internet haut débit afin de vous permettre une ambiance de travail optimale.</p>
+                            <h3>Qu'est-ce que Work'N Share?</h3>
+                            <p>Work'N Share est une solution de location de d'espaces de travail. Nous vous fournissons espaces, matériel, boissons et connexion internet haut débit afin de vous permettre une ambiance de travail optimale.</p>
                         </div>
                         <div class="box-faq to-animate-2">
                             <h3>Quel type d'équipement fournissez vous?</h3>
@@ -343,7 +292,7 @@
                     <div class="col-md-6">
                         <div class="box-faq to-animate-2">
                             <h3>Comment puis-je profiter de vos services?</h3>
-                            <p>Pour profiter de toutes les solutons Workin'Space, vous devez vous connecter (ou créer un compte ) et choisir une de nos formules afn de réserver vos locaux.</p>
+                            <p>Pour profiter de toutes les solutons Work'N Share, vous devez vous connecter (ou créer un compte ) et choisir une de nos formules afn de réserver vos locaux.</p>
                         </div>
                         <div class="box-faq to-animate-2">
                             <h3>Combien de personnes peuvent venir travailler avec moi?</h3>

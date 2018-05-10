@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/admin.css">
-  	
+
     <title>Panel Admin | WorkinSpace</title>
 </head>
 <body>
@@ -28,11 +28,11 @@
 				<li class="has-children account">
 					<a href="#"><i class="fa fa-user-circle-o admin-top-icon" aria-hidden="true"></i>
 					<?php
-						echo "Kenji YOROBA";
+						  echo $_SESSION['id_utilisateur'];
 					?>
 					</a>
 					<ul>
-						<li><a href="../">Quitter</a></li>
+						<li><a href="http://localhost/Projet_ANNUEL--CIG-KIKI-KEN">Quitter</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -46,8 +46,7 @@
 				<li><a href="../admin"><i class="fa fa-home admin-side-icon" aria-hidden="true"></i>Accueil</a></li>
 				<li><a href="admins.php"><i class="fa fa-user-secret admin-side-icon" aria-hidden="true"></i>Administrateurs</a></li>
 				<li><a href="users.php"><i class="fa fa-users admin-side-icon" aria-hidden="true"></i>Utilisateurs</a></li>
-				
+
 
 		</nav>
 	</main>
-

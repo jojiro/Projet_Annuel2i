@@ -11,28 +11,18 @@
 
 
 		<div class="container">
-		    <h2>Liste des administrateurs</h2>                                                                                      
-		    <div class="table-responsive">          
+		    <h2>Liste des administrateurs</h2>
+		    <div class="table-responsive">
 			    <table class="table">
 			   		<thead>
 			        	<tr>
-				        	<th>#</th>
-				       		<th>Image</th>
-				       		<th>Sexe</th>
-					        <th>Nom</th>
-				       		<th>Prénom</th>
+				        	<th>Prénom</th>
+				       		<th>Nom</th>
+				       		<th>ID</th>
 					        <th>Date de naissance</th>
-					        <th>Email</th>
-					        <th>Pays</th>
-					        <th>Téléphone</th>
-					        <th>Situation</th>
-					        <th>Inscription</th>
-					        <th>Dermière modification</th>
-					        <th>Adresse IP</th>
-					        <th>Dernière connexion</th>
-					        <th>Supprimé</th>
+				       		<th>Téléphone</th>
+					        <th>Email</th>				
 					        <th>Admin</th>
-					        <th>Token</th>
 			      		</tr>
 			   		</thead>
 			    	<tbody>
@@ -73,7 +63,7 @@
 							echo '</tr>';
 						}
 
-				    ?>	      
+				    ?>
 
 					</tbody>
 				</table>

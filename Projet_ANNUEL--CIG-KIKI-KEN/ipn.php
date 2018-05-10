@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    $_SESSION["test"] = "test";
 
 if(isset($_POST)){
     //permet de traiter le retour ipn de paypal
@@ -37,24 +39,41 @@ if(isset($_POST)){
                        file_put_contents('log', print_r($_POST,true));
 
                     $db = new PDO("mysql:host=localhost;dbname=worknshare", "root","");
-                    $req = $db->query('SELECT * FROM offers WHERE price='.$payment_amount.' LIMIT 1 ');
-                    $d =$req->fetch(PDO::FETCH_ASSOC);
+
+                    $query = $db->prepare('SELECT * FROM offers WHERE price = :price');
+                    $query->execute([
+                        "price" => $payment_amount
+                    ]);
+
+                    $d = $query->fetch(PDO::FETCH_ASSOC);
+
                     if(!empty($d)) {
 
-                    $duration = $d['duration'];
-                    $uid = $custom['Id_user'];
-                    // MAJ date d'expiration
-                    $db->query('UPDATE users SET expiration = DATE_ADD(NOW()) ,INTERVAL'.$duration.' MONTH) WHERE id ='.$uid.')');
+                        $duration = $d['duration'];
+                        $uid = $custom['Id_user'];
 
-                    // On sauvegarde la commande
+                        $now = date("Y-m-d H:i:s");
 
-                    $db->query("INSERT INTO subscription SET user_id= $uid, amount=$payment_amount, created= NOW() ");
+                        echo date("Y-m-d H:i:s", strtotime($now.' + '.$duration.'  month'));
 
-                        file_put_contents('log', 'Le paiment a bien été confirmé');
+                        // MAJ date d'expiration
+                        $query = $db->prepare("UPDATE users SET expiration = :expiration WHERE id = :id");
+                        $query->execute([
+                            "expiration"=> date("Y-m-d H:i:s", strtotime($now.' + '.$duration.'  month')) ,
+                            "id" => $uid
+                        ]);
+                        // On sauvegarde la commande
+
+                        $query = $db->prepare("INSERT INTO subscription(user_id , amount) VALUES (:user_id, :amount)");
+                        $query->execute([
+                            "user_id"=> $uid ,
+                            "amount" => $payment_amount
+                        ]);
+
+                            file_put_contents('log', 'Le paiment a bien été confirmé');
 
 
                     }else{
-
                         file_put_contents('log', 'Le paiment ne correspond à aucune offre');
                     }
 
