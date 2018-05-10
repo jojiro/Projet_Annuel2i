@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
+<<<<<<< HEAD:Base de donnée/worknshare (1).sql
 -- Généré le :  Jeu 10 Mai 2018 à 09:58
+=======
+-- Généré le :  Mer 02 Mai 2018 à 12:44
+>>>>>>> parent of c1af762... DEBUG XML , RESERVATION AVANCEMENT et BDD UPDATE:Base de donnée/worknshare (1).sql
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -137,6 +141,7 @@ CREATE TABLE `room` (
   `booked` tinyint(2) NOT NULL DEFAULT '0',
   `id_location` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+<<<<<<< HEAD:Base de donnée/worknshare (1).sql
 
 --
 -- Contenu de la table `room`
@@ -147,6 +152,8 @@ INSERT INTO `room` (`id_room`, `type_room`, `booked`, `id_location`) VALUES
 (2, 'Salle Travail', 0, 1),
 (3, 'Bureau Oval', 0, 1),
 (4, 'Salle Gaming', 0, 1);
+=======
+>>>>>>> parent of c1af762... DEBUG XML , RESERVATION AVANCEMENT et BDD UPDATE:Base de donnée/worknshare (1).sql
 
 -- --------------------------------------------------------
 
@@ -155,10 +162,17 @@ INSERT INTO `room` (`id_room`, `type_room`, `booked`, `id_location`) VALUES
 --
 
 CREATE TABLE `subscription` (
+<<<<<<< HEAD:Base de donnée/worknshare (1).sql
   `id_subscription` int(11) NOT NULL,
   `price` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
   `date_payment` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+=======
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `amount` int(11) NOT NULL,
+  `date_payment` datetime NOT NULL
+>>>>>>> parent of c1af762... DEBUG XML , RESERVATION AVANCEMENT et BDD UPDATE:Base de donnée/worknshare (1).sql
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -189,13 +203,41 @@ CREATE TABLE `users` (
   `date_updated` timestamp NULL DEFAULT NULL,
   `is_admin` tinyint(1) DEFAULT '0',
   `expiration` datetime DEFAULT NULL,
+<<<<<<< HEAD:Base de donnée/worknshare (1).sql
   `id_subscription` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `users`
+=======
+  `payer_id` varchar(255) DEFAULT NULL,
+  `profile_id` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `users`
 --
 
+INSERT INTO `users` (`name`, `surname`, `id`, `password`, `birthday`, `phone`, `email`, `is_deleted`, `date_updated`, `is_admin`, `expiration`, `payer_id`, `profile_id`) VALUES
+('Kenji', 'Yoroba', 6, '$2y$10$zL4s.caVx1al2ajy0FzqpuuNdGeFmBcD1ha7VVqCAbSmYBXFvTM/a', '1998-05-12', '0659530959', 'kenjiyoroba@yahoo.fr', 0, NULL, 1, NULL, NULL, NULL),
+('testo', 'test', 7, '$2y$10$QfLqAvRORPq7I4kz3yTjW.xWEOWxtSnQzpHdEFb8wbddAbcCMNpE6', '1990-07-08', '0687542165', 'test@gmail.fr', 0, NULL, 0, NULL, NULL, NULL),
+('Jalal', 'Joachim', 4, '$2y$10$l1Qy2Y5.mMv4otKRKSuPLO26VAudFEnUfGhy2v9Lg72y3HEfF0cqa', '1998-01-12', '0659530959', 'kill@yahoo.fr', 0, NULL, 0, NULL, NULL, NULL),
+('Precarite', 'precarite', 8, '$2y$10$imUCzaNpT9Fl4m1FD/Q8mukfLi/MXUgh.TL6ZXF2NEBWrjt0GitOu', '1997-07-12', '0612457898', 'precarite@yahoo.fr', 0, NULL, 0, NULL, NULL, NULL),
+('Chalana', 'Mangue', 9, '$2y$10$yIdpH4WNrrctBxEAqA3B9eRYDr71dUb/SW3190BwP3w2.LzTmmLSa', '1989-12-14', '0612459878', 'chalana@yahoo.fr', 0, NULL, 0, NULL, NULL, NULL),
+('KY', 'Stephalafele', 10, '$2y$10$3zcvYNkLhqygBcUAy/p.PO1AQ8Hn9s1z4XBgBb7qTeNQv4ij2mf6y', '1992-04-23', '0632459875', 'stephane@yahoo.fr', 0, NULL, 0, NULL, NULL, NULL);
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `booking`
+>>>>>>> parent of c1af762... DEBUG XML , RESERVATION AVANCEMENT et BDD UPDATE:Base de donnée/worknshare (1).sql
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`id_room`);
+
+<<<<<<< HEAD:Base de donnée/worknshare (1).sql
 INSERT INTO `users` (`name`, `surname`, `id`, `password`, `birthday`, `phone`, `email`, `is_deleted`, `date_updated`, `is_admin`, `expiration`, `id_subscription`) VALUES
 ('Kenji', 'Yoroba', 6, '$2y$10$zL4s.caVx1al2ajy0FzqpuuNdGeFmBcD1ha7VVqCAbSmYBXFvTM/a', '1998-05-12', '0659530959', 'kenjiyoroba@yahoo.fr', 0, NULL, 1, NULL, 4),
 ('TESTO', 'Test', 7, '$2y$10$QfLqAvRORPq7I4kz3yTjW.xWEOWxtSnQzpHdEFb8wbddAbcCMNpE6', '1990-07-08', '0687542165', 'test@gmail.fr', 1, NULL, 0, NULL, 0),
@@ -214,11 +256,14 @@ INSERT INTO `users` (`name`, `surname`, `id`, `password`, `birthday`, `phone`, `
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`id_room`);
 
+=======
+>>>>>>> parent of c1af762... DEBUG XML , RESERVATION AVANCEMENT et BDD UPDATE:Base de donnée/worknshare (1).sql
 --
 -- Index pour la table `employee`
 --
 ALTER TABLE `employee`
   ADD PRIMARY KEY (`id`);
+<<<<<<< HEAD:Base de donnée/worknshare (1).sql
 
 --
 -- Index pour la table `equipment`
@@ -233,6 +278,22 @@ ALTER TABLE `location`
   ADD PRIMARY KEY (`id_location`);
 
 --
+=======
+
+--
+-- Index pour la table `equipment`
+--
+ALTER TABLE `equipment`
+  ADD PRIMARY KEY (`id_equipment`);
+
+--
+-- Index pour la table `location`
+--
+ALTER TABLE `location`
+  ADD PRIMARY KEY (`id_location`);
+
+--
+>>>>>>> parent of c1af762... DEBUG XML , RESERVATION AVANCEMENT et BDD UPDATE:Base de donnée/worknshare (1).sql
 -- Index pour la table `offers`
 --
 ALTER TABLE `offers`
@@ -254,7 +315,11 @@ ALTER TABLE `room`
 -- Index pour la table `subscription`
 --
 ALTER TABLE `subscription`
+<<<<<<< HEAD:Base de donnée/worknshare (1).sql
   ADD PRIMARY KEY (`id_subscription`);
+=======
+  ADD PRIMARY KEY (`id`);
+>>>>>>> parent of c1af762... DEBUG XML , RESERVATION AVANCEMENT et BDD UPDATE:Base de donnée/worknshare (1).sql
 
 --
 -- Index pour la table `users`
@@ -285,12 +350,20 @@ ALTER TABLE `offers`
 -- AUTO_INCREMENT pour la table `room`
 --
 ALTER TABLE `room`
+<<<<<<< HEAD:Base de donnée/worknshare (1).sql
   MODIFY `id_room` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+=======
+  MODIFY `id_room` int(11) NOT NULL AUTO_INCREMENT;
+>>>>>>> parent of c1af762... DEBUG XML , RESERVATION AVANCEMENT et BDD UPDATE:Base de donnée/worknshare (1).sql
 --
 -- AUTO_INCREMENT pour la table `subscription`
 --
 ALTER TABLE `subscription`
+<<<<<<< HEAD:Base de donnée/worknshare (1).sql
   MODIFY `id_subscription` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+>>>>>>> parent of c1af762... DEBUG XML , RESERVATION AVANCEMENT et BDD UPDATE:Base de donnée/worknshare (1).sql
 --
 -- AUTO_INCREMENT pour la table `users`
 --

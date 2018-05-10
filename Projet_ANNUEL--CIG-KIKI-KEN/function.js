@@ -18,7 +18,7 @@ function getXMLHttpRequest(){
   return xml;
 }
 
-function print_room(){
+function printf_room(){
   var xml = getXMLHttpRequest();
 
   var id_location = document.getElementsByName("place_select")[0].value;
@@ -39,8 +39,7 @@ function print_room(){
   xml.setRequestHeader("Content-type","application/x-www-forms-urlencoded");
   xml.send(param);
 }
-/*
+
 function book_display(){
   var select = document.getElementsByName("");
 }
-*/
