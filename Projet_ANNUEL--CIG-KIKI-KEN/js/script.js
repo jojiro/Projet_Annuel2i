@@ -116,13 +116,3 @@ xhttp.open("GET", url, true);
 xhttp.send();
 
 }
-
-
-
-// AFFICHAGE Abonnement
-
-function type_abo(){
-	var value = document.getElementById('type_abonnement').value
-
-	var url='aff_abonnement.php?type=' + value
-}
