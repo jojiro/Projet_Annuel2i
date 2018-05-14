@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Projet annuel 2i" company="" webLink="http://" view-date="2018-01-08" view-index="0" gantt-divider-location="439" resource-divider-location="300" version="2.8.5" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Projet annuel 2i" company="" webLink="http://" view-date="2018-01-22" view-index="0" gantt-divider-location="439" resource-divider-location="300" version="2.8.5" locale="fr">
     <description><![CDATA[Projet annuel 2i de Killian, Jonathan et Kenji]]></description>
     <view zooming-state="default:6" id="gantt-chart">
         <field id="tpd3" name="Nom" width="220" order="0"/>
@@ -33,6 +33,8 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
+        <task id="171" name="tâche_171" meeting="false" start="2018-01-08" duration="1" complete="0" expand="true"/>
+        <task id="172" name="tâche_172" meeting="false" start="2018-01-08" duration="1" complete="0" expand="true"/>
         <task id="57" name="Partie réseau" meeting="false" start="2018-01-16" duration="115" complete="0" expand="true">
             <task id="63" name="Routage" color="#8cb6ce" meeting="false" start="2018-01-16" duration="115" complete="0" expand="true">
                 <task id="93" name="Recherche revendeur" meeting="false" start="2018-01-16" duration="54" complete="0" expand="true"/>
@@ -84,20 +86,28 @@
             <task id="157" name="Fin mission 2" meeting="false" start="2018-04-24" duration="17" complete="0" expand="true"/>
         </task>
         <task id="150" name="Dossier" meeting="false" start="2018-02-11" duration="89" complete="0" expand="true"/>
-        <task id="130" name="Mission 1" meeting="false" start="2018-02-11" duration="47" complete="0" expand="true">
-            <task id="144" name="Application web" color="#8cb6ce" meeting="false" start="2018-02-11" duration="47" complete="0" expand="true">
-                <task id="158" name="schéma de la bdd (mission 1) sous forme de MCD" meeting="false" start="2018-02-11" duration="24" complete="0" expand="true"/>
-                <task id="159" name="Dévellopement" meeting="false" start="2018-03-06" duration="24" complete="0" expand="true"/>
-            </task>
-            <task id="137" name="descriptif fonctionel détaillé" meeting="false" start="2018-02-11" duration="24" complete="0" expand="true"/>
-        </task>
         <task id="141" name="Fonctionnalités détaillées" meeting="false" start="2018-02-11" duration="47" complete="0" expand="true"/>
         <task id="125" name="Charte graphique avec exemple écrit" color="#8cb6ce" meeting="false" start="2018-02-11" duration="24" complete="0" expand="true"/>
         <task id="127" name="maquette de l'application web" meeting="false" start="2018-02-11" duration="24" complete="0" expand="true"/>
         <task id="131" name="Partie entrées sorties" meeting="false" start="2018-02-11" duration="15" complete="0" expand="true">
             <task id="139" name="gestion fichier xml" meeting="false" start="2018-02-11" duration="15" complete="0" expand="true"/>
         </task>
+        <task id="130" name="Mission 1" meeting="false" start="2018-02-11" duration="77" complete="0" expand="true">
+            <task id="137" name="descriptif fonctionel détaillé" meeting="false" start="2018-02-11" duration="24" complete="0" expand="true"/>
+            <task id="144" name="Application web" color="#8cb6ce" meeting="false" start="2018-02-11" duration="77" complete="0" expand="true">
+                <task id="158" name="schéma de la bdd (mission 1) sous forme de MCD" meeting="false" start="2018-02-11" duration="24" complete="0" expand="true"/>
+                <task id="159" name="Dévellopement" meeting="false" start="2018-02-20" duration="50" complete="0" expand="true">
+                    <task id="161" name="PHP" color="#8cb6ce" meeting="false" start="2018-02-20" duration="50" complete="0" expand="true"/>
+                    <task id="163" name="Back office" color="#8cb6ce" meeting="false" start="2018-03-01" duration="28" complete="0" expand="true"/>
+                </task>
+                <task id="166" name="WebGL" color="#8cb6ce" meeting="false" start="2018-04-28" duration="1" complete="0" expand="true"/>
+            </task>
+        </task>
         <task id="31" name="RENDU 1 [G]" color="#8cb6ce" meeting="true" start="2018-02-20" duration="0" complete="0" priority="2" expand="true"/>
+        <task id="165" name="QR code" meeting="false" start="2018-02-24" duration="41" complete="0" expand="true">
+            <task id="186" name="Langage C" color="#8cb6ce" meeting="false" start="2018-02-24" duration="15" complete="0" expand="true"/>
+            <task id="174" name="XML" color="#8cb6ce" meeting="false" start="2018-03-07" duration="30" complete="0" expand="true"/>
+        </task>
         <task id="39" name="RENDU 2 [S]" color="#8cb6ce" meeting="true" start="2018-03-07" duration="0" complete="0" priority="2" expand="true"/>
         <task id="41" name="RENDU 3 [S]" color="#8cb6ce" meeting="true" start="2018-03-29" duration="0" complete="0" priority="2" expand="true"/>
         <task id="44" name="RENDU 4 [S&amp;G]" color="#8cb6ce" meeting="true" start="2018-04-23" duration="0" complete="0" priority="2" expand="true"/>

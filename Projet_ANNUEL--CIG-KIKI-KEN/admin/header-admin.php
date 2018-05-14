@@ -19,7 +19,7 @@
 </head>
 <body>
 	<header class="cd-main-header">
-		<a href="../../" class="cd-logo"><img class="logo" src="img/logo.png" alt="Logo"></a>
+		<a href="../index.php" class="cd-logo"><img class="logo" src="img/logo.png" alt="Logo"></a>
 
 		<a href="#" class="cd-nav-trigger"><span></span></a>
 
@@ -46,6 +46,7 @@
 				<li><a href="../admin"><i class="fa fa-home admin-side-icon" aria-hidden="true"></i>Accueil</a></li>
 				<li><a href="admins.php"><i class="fa fa-user-secret admin-side-icon" aria-hidden="true"></i>Administrateurs</a></li>
 				<li><a href="users.php"><i class="fa fa-users admin-side-icon" aria-hidden="true"></i>Utilisateurs</a></li>
+				<li><a href="listeTicket.php"><i class="fa fa-vcard-o admin-side-icon" aria-hidden="true"></i>Gestion des tickets</a></li>
 
 
 		</nav>

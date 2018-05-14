@@ -87,8 +87,11 @@ session_start();
 						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>
 						<li class="call-to-action">
 							<?php if (isset($_SESSION["id_utilisateur"]) && !empty($_SESSION["id_utilisateur"])){
-								echo "<a href='deconnexion' class='external'><span>Se deconnecter</span></a>";
-                                echo "<a href='abonnement.php' class='external'><span>Abonnement</span></a>";
+								echo "<li><a href='deconnexion.php' class='external'><span>Se deconnecter</span></a></li>
+";
+                                echo "<li>
+<a href='abonnement.php' class='external'><span>Abonnement</span></a></li>
+";
 							}else{
 								echo "<a class='external' href='connexion'><span>Se connecter</span></a>";
 							}

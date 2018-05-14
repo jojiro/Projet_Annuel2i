@@ -12,4 +12,6 @@
 	    die("Erreur SQL : ". $e->getMessage() );
 	}
 
+	//tester si l'utilisateur est ADMIN
+
 ?>
