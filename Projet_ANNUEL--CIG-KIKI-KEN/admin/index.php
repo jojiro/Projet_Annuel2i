@@ -1,7 +1,10 @@
 <?php
 	require "header-admin.php";
-?>
 
+if(isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] == 0){
+	header("Location: ../index.php");
+}
+?>
 	<section id="page-section">
 		<h1 id="page-title">Panel Admin Worknshare</h1>
 
@@ -9,7 +12,7 @@
 
 			<div class="row">
 
- 
+
 					<div class="stat-container">
 
 						<center>
@@ -25,9 +28,9 @@
 										?>
 									</p>
 								</div>
-							</div>	
+							</div>
 
-							
+
 
 							<div class="admin-stat-block col-sm-3">
 								<div class="admin-stat-values">
@@ -52,7 +55,6 @@
 			<hr>
 
 	</section>
-
 <?php
 	require "footer-admin.php";
 ?>

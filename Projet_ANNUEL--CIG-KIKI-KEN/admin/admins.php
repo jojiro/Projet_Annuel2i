@@ -1,6 +1,5 @@
 <?php
 	require "header-admin.php";
-
 	unset($_SESSION["userId"]);
 ?>
 
@@ -21,7 +20,7 @@
 				       		<th>ID</th>
 					        <th>Date de naissance</th>
 				       		<th>Téléphone</th>
-					        <th>Email</th>				
+					        <th>Email</th>
 					        <th>Admin</th>
 			      		</tr>
 			   		</thead>

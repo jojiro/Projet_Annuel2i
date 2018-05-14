@@ -1,44 +1,17 @@
 <?php
 session_start();
  ?>
+
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Union &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
-
-  <!--
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO"/>
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"/>
+	<meta name="author" content="FREEHTML5.CO"/>
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
@@ -68,6 +41,7 @@ session_start();
 	<![endif]-->
 
 	</head>
+
 	<body>
 	<header role="banner" id="fh5co-header">
 		<div class="fluid-container">
@@ -82,16 +56,13 @@ session_start();
 						<li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
 						<li><a href="http://localhost/Projet_ANNUEL--CIG-KIKI-KEN" data-nav-section="explore"><span>WebGL</span></a></li>
 						<li><a href="http://localhost/Projet_ANNUEL--CIG-KIKI-KEN" data-nav-section="testimony"><span>Témoignages</span></a></li>
-						<li><a href="abonnement.php"><span>Abonnement</span></a></li>
+            <li><a href="reservation.php"><span></span>Reserver</a></li>
 						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
 						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>
 						<li class="call-to-action">
 							<?php if (isset($_SESSION["id_utilisateur"]) && !empty($_SESSION["id_utilisateur"])){
-								echo "<li><a href='deconnexion.php' class='external'><span>Se deconnecter</span></a></li>
-";
-                                echo "<li>
-<a href='abonnement.php' class='external'><span>Abonnement</span></a></li>
-";
+								echo "<li><a href='deconnexion.php' class='external'><span>Se deconnecter</span></a></li>";
+                echo "<li><a href='abonnement.php' class='external'><span>Abonnement</span></a></li>";
 							}else{
 								echo "<a class='external' href='connexion'><span>Se connecter</span></a>";
 							}
