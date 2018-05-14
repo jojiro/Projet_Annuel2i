@@ -1,21 +1,21 @@
 function getXMLHttpRequest(){
-  var xml = null;
+  var xhr = null;
 
   if(window.getXMLHttpRequest || window.ActiveXObject){
     if(window.ActiveXObject){
       try {
-        xml = new ActiveXObject("Msxml2.XMLHTTP");
+        xhr = new ActiveXObject("Msxml2.XMLHTTP");
       } catch (e) {
-        xml = new ActiveXObject("Microsoft.XMLHTTP");
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
       }
     } else {
-       xml = new getXMLHttpRequest();
+       xhr = new getXMLHttpRequest();
     }
   } else {
     alert("Le navigateur ne supporte pas AJAX");
     return null;
   }
-  return xml;
+  return xhr;
 }
 
 function printf_room(){

@@ -5,9 +5,10 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h1 id="reservation-title">Gestion des Réservations</h1>
     </div>
   </div>
+<div style="margin:80px;">
+  <h1 id="reservation-title">Gestion des Réservations</h1>
 
   	<form method="POST" action="ReservationGestion.php">
       <div class="form-group">
@@ -18,11 +19,11 @@
   		<select class="form-control" name="place_select">
   			<option value="place-default">Selectionner le lieu</option>
     	<?php
-  		  $db = connect_db();
+  		$db = connect_db();
 
   		$query = $db->prepare("SELECT * FROM location");
   		$query->execute();
-  	 $location =	$result = $query->fetchAll(PDO::FETCH_ASSOC);
+  	  $location =	$result = $query->fetchAll(PDO::FETCH_ASSOC);
   		foreach ($location as $key) {
   			echo '<option value="'.$key["id_location"].'">'.location_name($key["id_location"]).'</option>';
   		}
@@ -35,19 +36,22 @@
   		<label for="exampleFormControlSelect1">Selectionner La Salle</label>
   		<select class="form-control" name="select_room" onchange="book_print_room()">
   			<?php
-  			if( isset($POST["location"])){
-  				$rooms = room($POST["location"]);
+  			if( isset($POST["id_location"])){ // cette condition est pas ok
+  				$rooms = room($POST["id_location"]);
   			}
+        $rooms = room(1); // test
   			echo '<option value="room_default" selected="selected"> Selectionner la salle </option>';
-  	 		foreach ($room as $keyroom) {
-  	 			echo '<option value="'.$room["id_room"].'">'.$room["type_room"].' Nombre de Place : '.$room["number_places"].'</option>';
+  	 		foreach ($rooms as $keyroom) {
+  	 			echo '<option value="'.$keyroom["id_room"].'">'.$keyroom["type_room"].'</option>';
   	 		}
   			 ?>
   		 </select>
   	<!-- -->
 
   	<!-- HORAIRES -->
+    <label for="exampleFormControlSelect1">Selectionner Les horaires</label>
   		 <select class="form-control" name="select_hour" onchange="print_hour()">
+         	<option value="place-default">Selectionner horaires</option>
   			 <?php
   			 if( isset($POST["room"])){
 
@@ -60,3 +64,4 @@
   	 </div>
       <input class="champ" id="btnsubmit" type="submit" value="Reserver">
     </form>
+</div>

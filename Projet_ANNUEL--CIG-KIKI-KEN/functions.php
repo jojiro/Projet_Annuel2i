@@ -12,6 +12,7 @@ function connect_db(){
 			}
 			return $db;
 }
+
 function showArray($array){
 	echo "<pre>";
 	print_r($array);
@@ -33,8 +34,8 @@ function location_name($id){
 function room($id_location){
 
 	$db = connect_db();
-	$query = $db->prepare("SELECT * FROM room WHERE id_location=:id_location AND booked=:0");
-	$query->bindparam('id_location', $id_location);
+	$query = $db->prepare("SELECT * FROM room WHERE id_location=:id_location AND booked=0");
+	$query->bindparam('id_location', $id_location); //$id_location
   $query->execute();
   $result = $query->fetchAll(PDO::FETCH_ASSOC);
 	return $result;
