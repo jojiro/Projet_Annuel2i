@@ -16,14 +16,14 @@
 
   	<!-- LIEUX -->
       <label>Les Lieux</label>
-  		<select class="form-control" name="place_select">
-  			<option value="place-default">Selectionner le lieu</option>
+  		<select class="form-control" name="place_select" required="required" onchange="printf_room()">
+  			<option value="">Selectionner le lieu</option>
     	<?php
   		$db = connect_db();
 
   		$query = $db->prepare("SELECT * FROM location");
   		$query->execute();
-  	  $location =	$result = $query->fetchAll(PDO::FETCH_ASSOC);
+  	  $location = $query->fetchAll(PDO::FETCH_ASSOC);
   		foreach ($location as $key) {
   			echo '<option value="'.$key["id_location"].'">'.location_name($key["id_location"]).'</option>';
   		}
@@ -34,11 +34,9 @@
   	<!-- SALLE -->
   		<div id="print_room">
   		<label for="exampleFormControlSelect1">Selectionner La Salle</label>
-  		<select class="form-control" name="select_room" onchange="book_print_room()">
+  		<select class="form-control" name="select_room">
   			<?php
-  			if( isset($POST["id_location"])){ // cette condition est pas ok
-  				$rooms = room($POST["id_location"]);
-  			}
+
         $rooms = room(1); // test
   			echo '<option value="room_default" selected="selected"> Selectionner la salle </option>';
   	 		foreach ($rooms as $keyroom) {
@@ -65,3 +63,4 @@
       <input class="champ" id="btnsubmit" type="submit" value="Reserver">
     </form>
 </div>
+<script src="function.js"></script>

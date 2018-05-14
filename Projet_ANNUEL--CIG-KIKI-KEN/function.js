@@ -9,7 +9,7 @@ function getXMLHttpRequest(){
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
       }
     } else {
-       xhr = new getXMLHttpRequest();
+       xhr = new XMLHttpRequest();
     }
   } else {
     alert("Le navigateur ne supporte pas AJAX");
@@ -22,24 +22,19 @@ function printf_room(){
   var xml = getXMLHttpRequest();
 
   var id_location = document.getElementsByName("place_select")[0].value;
-  console.log(id_location);
+  console.log(id_location); //test
 
-  var url = "reservation.php";
-  var param = "location=" + id_location;
+  var url = "getreservation.php";
+  var param = 'location=' + id_location;
+  console.log(param);
 
   xml.onreadystatechange= function(){
     if(xml.readyState == 4 && (xml.status == 200 || xml.status == 0)){
-      document.getElementsById("print_room").innerHTML = xml.responseText;
-      if(id_location != "place_default"){
-        book_display();
+        var res = JSON.parse(xml.responseText);
+        console.log(res);
       }
     }
-  }
-  xml.open("POST", url , true);
-  xml.setRequestHeader("Content-type","application/x-www-forms-urlencoded");
-  xml.send(param);
-}
 
-function book_display(){
-  var select = document.getElementsByName("");
+  xml.open("GET", url+"?"+param, true);
+  xml.send();
 }
