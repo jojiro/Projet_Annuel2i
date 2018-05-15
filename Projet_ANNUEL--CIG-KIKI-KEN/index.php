@@ -48,7 +48,9 @@ require "header.php";
         <div class="col-md-4 col-md-pull-8 to-animate-2">
           <div class="mt">
             <h3>Intégration WebGl</h3>
-
+            <div class="call-to-action">
+            <a href='webgl.html' class='demo to-animate'>Visiter WorknShare</a>
+          </div>
             <ul class="list-nav">
               <li><i class="icon-check2"></i>Far far away, behind the word</li>
               <li><i class="icon-check2"></i>There live the blind texts</li>
@@ -79,13 +81,13 @@ require "header.php";
                 <blockquote>
                   <p>"La solution qui m'a été proposée par Work'n Share m'as permis de me consacrer corps et âme sur mon projet et d'atteindre des niveaux de concentration et de productivité seulement possible dans un tel environnement."</p>
                 </blockquote>
-                <span>Killian Tissier, via <a href="#" class="twitter">Twitter</a></span>
+                <span>Xavier Niel, via <a href="#" class="twitter">Twitter</a></span>
               </div>
             </div>
             <div class="item">
               <div class="testimony-slide active text-center">
                 <figure>
-                  <img src="images/person3.jpg" alt="user">
+                  <img src="images/p1.jpg" alt="user">
                 </figure>
                 <blockquote>
                   <p>"Simplement la meilleure solution pour travailler loin des distractions du quotidien."</p>
@@ -104,6 +106,11 @@ require "header.php";
                 <span>Pierre Belmart, via <a href="#" class="twitter">Twitter</a></span>
               </div>
             </div>
+            <div class="item">
+              <div class="testimony-slide active text-center">
+                <figure>
+                  <img src="images/p2.jpg" alt="user">
+                </figure>
           </div>
         </div>
       </div>

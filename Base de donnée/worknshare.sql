@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 10 mai 2018 à 11:50
+-- Généré le :  mar. 15 mai 2018 à 08:35
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -104,6 +104,34 @@ INSERT INTO `location` (`id_location`, `town`, `address`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `materiel`
+--
+
+DROP TABLE IF EXISTS `materiel`;
+CREATE TABLE IF NOT EXISTS `materiel` (
+  `reference` varchar(15) NOT NULL,
+  `localisation` tinyint(1) DEFAULT NULL,
+  `problems` text NOT NULL,
+  `status` int(11) NOT NULL,
+  `entered_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `type` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`reference`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `materiel`
+--
+
+INSERT INTO `materiel` (`reference`, `localisation`, `problems`, `status`, `entered_at`, `type`) VALUES
+('H2VS67PY', 6, 'L\'ampoule ne s\'allume plus.\r\nPiÃ¨ce commandÃ©.\n- \r\nAmpoule rÃ©parÃ© .  ', 2, '2018-05-14 23:29:28', 5),
+('A59VD43K', 1, 'Faibles traces d\'usure sur le cotÃ© droit et touche f7 bloquÃ©e.', 2, '2018-05-14 23:28:11', 2),
+('B78TR63J', 5, '\r\n', 1, '2018-05-14 23:26:35', 3),
+('93QM19AN', 2, 'Un client a renversÃ© un tasse de cafÃ© sur ce clavier.\r\nIrrÃ©parable.', 4, '2018-05-14 23:30:38', 4),
+('6F7C2TY3', 3, 'Nouvelle Imprimante.', 1, '2018-05-14 23:31:17', 6);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `offers`
 --
 
@@ -188,6 +216,32 @@ INSERT INTO `subscription` (`id_subscription`, `price`, `name`, `date_payment`) 
 (4, '20', 'Abonnement Simple Avec Engagement', '2018-05-09 16:35:27'),
 (1, '300', 'Abonnement Résident sans Engagement', '2018-05-09 16:39:45'),
 (2, '252', 'Abonnement Résident avec Engagement', '2018-05-09 16:39:45');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tickets`
+--
+
+DROP TABLE IF EXISTS `tickets`;
+CREATE TABLE IF NOT EXISTS `tickets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(255) NOT NULL,
+  `title` text NOT NULL,
+  `message` text NOT NULL,
+  `status` tinyint(1) DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `tickets`
+--
+
+INSERT INTO `tickets` (`id`, `user_id`, `title`, `message`, `status`, `created_at`) VALUES
+(9, 'test@email.test', 'J\'ai renversÃ© mon cafÃ© sur un clavier', 'En plein travail ce jeudi,j\'ai malencontreusement renversÃ© mon cafÃ© sur un clavier de la salle d\'appel 2 de Beaubourg.\r\nIl Ã  dÃ©jÃ  Ã©tÃ© remplacÃ© par un de vos collÃ¨gues cependant je laisse une trac pour un Ã©ventuelle facturation des dÃ©gÃ¢ts.\nRÃ©ponse de l\'administrateur: Ceci vous Ã  Ã©tÃ© facturÃ© sur votre prochain abonnement.\r\nMerci de votre honnÃªtetÃ©.      ', 3, '2018-05-14 23:55:27'),
+(8, 'test@email.test', 'Le portique Ã  odÃ©on grince affreusement', 'le portique le plus Ã  gauche au site d\'odÃ©on Ã©met un bruit monstrueux et peu discret dÃ¨s qu\'il est activÃ©.\r\nAfin de nous permettre de travailler dans les meilleurs conditions,je vous prie d\'y jeter un Å“il.\nRÃ©ponse de l\'administrateur: Le portique en question Ã  Ã©tÃ© inspectÃ© et est en effet dÃ©fectueux.\r\nun rechange Ã  Ã©tÃ© commandÃ©.          ', 2, '2018-05-14 23:53:09'),
+(7, 'test@email.test', 'Borne Wifi de la salle de repos Ã©teint', 'La borne Wifi de la salle de repos 1 de Bastille est en panne car elle n\'est pas allumÃ© et ne veut pas se mettre en route.\r\n        	', 1, '2018-05-14 23:51:07');
 
 -- --------------------------------------------------------
 

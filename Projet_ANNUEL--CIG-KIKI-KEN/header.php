@@ -61,11 +61,15 @@ session_start();
 						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>
 						<li class="call-to-action">
 							<?php if (isset($_SESSION["id_utilisateur"]) && !empty($_SESSION["id_utilisateur"])){
-								echo "<li><a href='deconnexion.php' class='external'><span>Se deconnecter</span></a></li>";
                 echo "<li><a href='abonnement.php' class='external'><span>Abonnement</span></a></li>";
+                echo "<li><a href='ticket.php' class='external'><span>Support Ticket</span></a></li>";
+                echo "<li><a href='deconnexion.php' class='external'><span>Se deconnecter</span></a></li>";
 							}else{
 								echo "<a class='external' href='connexion'><span>Se connecter</span></a>";
 							}
+              if(isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] == 1){
+              	echo "<li><a href='admin/index.php' class='external'><span>Administration</span></a></li>";
+              }
 							?>
 							</li>
 					</ul>
