@@ -30,13 +30,3 @@ function location_name($id){
 
 	return $result["town"];
 }
-
-function room($id_location){
-
-	$db = connect_db();
-	$query = $db->prepare("SELECT * FROM room WHERE id_location=:id_location AND booked=0");
-	$query->bindparam('id_location', $id_location); //$id_location
-  $query->execute();
-  $result = $query->fetchAll(PDO::FETCH_ASSOC);
-	return $result;
-}

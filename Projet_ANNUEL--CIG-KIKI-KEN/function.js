@@ -31,7 +31,17 @@ function printf_room(){
   xml.onreadystatechange= function(){
     if(xml.readyState == 4 && (xml.status == 200 || xml.status == 0)){
         var res = JSON.parse(xml.responseText);
-        console.log(res);
+        var destination = document.getElementsByName("select_room")[0];
+        destination.innerHTML = "";
+        var p;
+
+        res.forEach(function(element){
+          p = document.createElement("option");
+          p.value = element.id_room;
+          p.innerHTML = element.type_room;
+          destination.appendChild(p);
+        });
+
       }
     }
 

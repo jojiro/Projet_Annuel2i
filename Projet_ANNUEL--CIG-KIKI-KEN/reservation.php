@@ -33,31 +33,38 @@ require "functions.php";
 
       <!-- SALLE -->
       <div id="print_room">
-        <label for="exampleFormControlSelect1">Selectionner La Salle</label>
+        <label for="exampleFormControlSelect1">Selectionner la Salle</label>
         <select class="form-control" name="select_room">
           <?php
-
-          $rooms = room(1); // test
-          echo '<option value="room_default" selected="selected"> Selectionner la salle </option>';
-          foreach ($rooms as $keyroom) {
-            echo '<option value="'.$keyroom["id_room"].'">'.$keyroom["type_room"].'</option>';
-          }
+           echo '<option value="room_default" selected="selected"> Selectionner la salle </option>';
+          // AJAX
           ?>
         </select>
         <!-- -->
 
         <!-- HORAIRES -->
-        <label for="exampleFormControlSelect1">Selectionner Les horaires</label>
-        <select class="form-control" name="select_hour" onchange="print_hour()">
-          <option value="place-default">Selectionner horaires</option>
+        <label for="exampleFormControlSelect1">Selectionner la plage horaire</label>
+        <div class="input-append date form_datetime">
           <?php
-          if( isset($POST["room"])){
-
-          }
-
-
+          $now = date("Y-m-d");
           ?>
-        </select>
+          <input size="16" type="date" value="" name="dateinput" min="<?php echo $now;?>">
+          <br>
+          debut : <input size="16" type="time" value="" name="timeinput">
+          fin : <input size="16" type="time" value="" name="timeoutput">
+          <?php
+          if(isset($_SESSION["error"])){
+            echo "<div style='color:red;'>";
+            echo $_SESSION["error"];
+            echo "</div>";
+            unset($_SESSION["error"]);
+          }
+            if(isset($_SESSION["ok"])){
+                echo "<br>";
+                echo $_SESSION["ok"];
+                unset($_SESSION["ok"]);
+            }
+           ?>
         <!-- -->
       </div>
       <input class="champ" id="btnsubmit" type="submit" value="Reserver">

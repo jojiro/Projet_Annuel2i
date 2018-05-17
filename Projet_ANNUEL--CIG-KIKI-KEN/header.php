@@ -12,7 +12,9 @@ session_start();
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO"/>
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"/>
 	<meta name="author" content="FREEHTML5.CO"/>
-
+<!--
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+-->
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
 
@@ -56,7 +58,7 @@ session_start();
 						<li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
 						<li><a href="http://localhost/Projet_ANNUEL--CIG-KIKI-KEN" data-nav-section="explore"><span>WebGL</span></a></li>
 						<li><a href="http://localhost/Projet_ANNUEL--CIG-KIKI-KEN" data-nav-section="testimony"><span>Témoignages</span></a></li>
-            <li><a href="reservation.php"><span></span>Reserver</a></li>
+            <li><a href="reservation.php" class="external"><span></span>Reserver</a></li>
 						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
 						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>
 						<li class="call-to-action">
