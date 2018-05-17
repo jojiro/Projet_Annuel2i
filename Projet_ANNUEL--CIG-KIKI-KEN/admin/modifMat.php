@@ -10,10 +10,10 @@
 		) {
 	
 	$_POST["problems"] = $_POST["oldProblems"] . "\n- " . $_POST["problems"];
-	echo $_POST["problems"];
+	//echo $_POST["problems"];
 	//$reference=$_POST["reference"];
 	
-}
+
 
 	$query = $db->prepare("UPDATE materiel SET status = :status, problems = :problems, localisation = :localisation WHERE reference = :reference");
 
@@ -23,6 +23,16 @@
 					"localisation"=>$_POST["localisation"],
 					"reference"=>$_POST["reference"]
 				]);
+
+			header("Location: ListeMat.php");
+
+		}else{
+			echo "Problème lors de l'entrée en base de données, veuillez vous assurez de bien remplir correctement tout les champs"
+			?>
+			<li><a href="ListeMat.php">Retour à la liste du matériel</a></li>
+			<?php
+
+		}
 
  ?>
 

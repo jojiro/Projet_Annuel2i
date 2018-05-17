@@ -1,19 +1,17 @@
  <?php
 	require "verifAdmin.php";
 
-	showArray($_POST);
-	showArray($_SESSION);
-	echo count($_POST);
+	
 	if (count($_POST) == 4
 		&& !empty($_POST["id"])
 		&& !empty($_POST["answer"])
 		&& !empty($_POST["status"])
 		&& !empty($_POST["message"])
 		) {
-		showArray($_POST);
+		
 	$_POST["message"] = $_POST["message"] . "\nRéponse de l'administrateur: " . $_POST["answer"];
-	echo $_POST["message"];
-}
+	
+
 
 	$query = $db->prepare("UPDATE tickets SET status = :status, message = :message WHERE id = :id");
 
@@ -22,6 +20,14 @@
 					"message"=>$_POST["message"],
 					"id"=>$_POST["id"]
 				]);
+			header("Location: ListeTicket.php");
+		}else{
+			echo "Problème lors de l'entrée en base de données, veuillez vous assurez de bien remplir correctement tout les champs"
+			?>
+			<li><a href="ListeTicket.php">Retour à la liste des tickets</a></li>
+			<?php
+
+		}
 
  ?>
 

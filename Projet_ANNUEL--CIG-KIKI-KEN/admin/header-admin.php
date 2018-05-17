@@ -50,6 +50,7 @@
 				<li><a href="admins.php"><i class="fa fa-user-secret admin-side-icon" aria-hidden="true"></i>Administrateurs</a></li>
 				<li><a href="users.php"><i class="fa fa-users admin-side-icon" aria-hidden="true"></i>Utilisateurs</a></li>
 				<li><a href="listeTicket.php"><i class="fa fa-vcard-o admin-side-icon" aria-hidden="true"></i>Gestion des tickets</a></li>
+				<li><a href="listeMat.php"><i class="fa fa-desktop admin-side-icon" aria-hidden="true"></i>Gestion du matériel</a></li>
 
 
 		</nav>
