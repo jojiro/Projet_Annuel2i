@@ -58,7 +58,7 @@ session_start();
 						<li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
 						<li><a href="http://localhost/Projet_ANNUEL--CIG-KIKI-KEN" data-nav-section="explore"><span>WebGL</span></a></li>
 						<li><a href="http://localhost/Projet_ANNUEL--CIG-KIKI-KEN" data-nav-section="testimony"><span>Témoignages</span></a></li>
-            <li><a href="reservation.php" class="external"><span></span>Reserver</a></li>
+            <li><a href="reservation.php" class="external"><span></span>Réserver</a></li>
 						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
 						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>
 						<li class="call-to-action">

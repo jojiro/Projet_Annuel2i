@@ -52,11 +52,8 @@ require "header.php";
             <a href='webgl.html' class='demo to-animate'>Visiter WorknShare</a>
           </div>
             <ul class="list-nav">
-              <li><i class="icon-check2"></i>Far far away, behind the word</li>
-              <li><i class="icon-check2"></i>There live the blind texts</li>
-              <li><i class="icon-check2"></i>Separated they live in bookmarksgrove</li>
-              <li><i class="icon-check2"></i>Semantics a large language ocean</li>
-              <li><i class="icon-check2"></i>A small river named Duden</li>
+              <li><i class="icon-check2"></i>Exploration en 3D</li>
+              <li><i class="icon-check2"></i>Découvrez votre futur espace de travail!</li>
             </ul>
           </div>
         </div>
@@ -76,7 +73,7 @@ require "header.php";
             <div class="item">
               <div class="testimony-slide active text-center">
                 <figure>
-                  <img src="images/person2.jpg" alt="user">
+                  <img src="images/p1.jpg" alt="user">
                 </figure>
                 <blockquote>
                   <p>"La solution qui m'a été proposée par Work'n Share m'as permis de me consacrer corps et âme sur mon projet et d'atteindre des niveaux de concentration et de productivité seulement possible dans un tel environnement."</p>
@@ -87,7 +84,7 @@ require "header.php";
             <div class="item">
               <div class="testimony-slide active text-center">
                 <figure>
-                  <img src="images/p1.jpg" alt="user">
+                  <img src="images/person3.jpg" alt="user">
                 </figure>
                 <blockquote>
                   <p>"Simplement la meilleure solution pour travailler loin des distractions du quotidien."</p>
@@ -98,20 +95,14 @@ require "header.php";
             <div class="item">
               <div class="testimony-slide active text-center">
                 <figure>
-                  <img src="images/person2.jpg" alt="user">
+                  <img src="images/p2.jpg" alt="user">
                 </figure>
                 <blockquote>
-                  <p>"Grâce à Work'N Share j'ai pû lancer ma start up dans un environnement favorable et louer des équipment qui m'ont permis d'avancer trés rapidement ."</p>
+                  <p>"Grâce à Work'N Share j'ai pû lancer ma start up dans un environnement favorable et louer des équipment qui m'ont permis d'avancer très rapidement ."</p>
                 </blockquote>
                 <span>Pierre Belmart, via <a href="#" class="twitter">Twitter</a></span>
               </div>
             </div>
-            <div class="item">
-              <div class="testimony-slide active text-center">
-                <figure>
-                  <img src="images/p2.jpg" alt="user">
-                </figure>
-          </div>
         </div>
       </div>
     </div>
@@ -200,7 +191,7 @@ require "header.php";
         <div class="col-md-6">
           <div class="box-faq to-animate-2">
             <h3>Comment puis-je profiter de vos services?</h3>
-            <p>Pour profiter de toutes les solutons Work'N Share, vous devez vous connecter (ou créer un compte ) et choisir une de nos formules afn de réserver vos locaux.</p>
+            <p>Pour profiter de toutes les solutions Work'N Share, vous devez vous connecter (ou créer un compte ) et choisir une de nos formules afn de réserver vos locaux.</p>
           </div>
           <div class="box-faq to-animate-2">
             <h3>Combien de personnes peuvent venir travailler avec moi?</h3>
