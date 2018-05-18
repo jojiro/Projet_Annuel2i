@@ -3,6 +3,23 @@
 require "header.php";
 require "functions.php" ;
 $db = connect_db();
+
+
+$query = $db->prepare("SELECT id_subscription FROM users WHERE email = :email");
+$query->execute([
+      "email" => $_SESSION['email']
+    ]);
+$id_subscription = $query->fetch();
+
+
+if ($id_subscription[0] != 0) {
+    $query = $db->prepare("SELECT * FROM subscription WHERE id_subscription = :id_subscription");
+    $query->execute([
+          "id_subscription" => $id_subscription[0]
+        ]);
+    $user_subscription = $query->fetch(PDO::FETCH_ASSOC);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -21,18 +38,33 @@ $db = connect_db();
           <div class="col-md-12 section-heading text-center">
             <h2 class="to-animate">Abonnement</h2>
           </div>
-          <div class="col-md-12 section-heading text-center id="type_abonnement" ">
+          <div class="col-md-12 section-heading text-center" id="type_abonnement" ">
             <h2 class="to-animate"></h2>
           </div>
 
+
+            <?php
+
+            if ($id_subscription[0] != 0) {                  
+
+              echo '<h2 style="text-align: center;">Vous avez choisis notre formule '.$user_subscription["name"]." à un prix de ".$user_subscription["price"]." € par mois !";
+
+            }
+
+
+            if ($id_subscription[0] == 0) {
+                echo '
+
           <div class="row">
+
+
             <div class="pricing">
               <div class="col-md-4">
                 <div class="price-box to-animate-2">
                   <h2 class="pricing-plan">Sans Abonnement</h2>
                   <p>Payez en fonction du temps dont vous avez réellement besoin.</p>
-                  <!-- Trigger the modal with a button -->
-                  <a href="#" class="btn btn-select-plan btn-sm">Choisir cet Abonnement</a>
+                  <!-- Trigger the modal with a button 
+                  <a href="#" class="btn btn-select-plan btn-sm">Choisir cet Abonnement</a>-->
                 </div>
               </div>
 
@@ -40,7 +72,7 @@ $db = connect_db();
               <div class="col-md-4">
                 <div class="price-box to-animate-2 popular">
                   <h2 class="pricing-plan pricing-plan-offer">Abonnement Simple <span>TTC</span></h2>
-                  <p> Accès open space ( sans possibilité de changer d'adresse ) Wifi , Snacking & boissons à volonté cabines téléphonique </p>
+                  <p> Accès open space ( sans possibilité de changer d\'adresse ) Wifi , Snacking & boissons à volonté cabines téléphonique </p>
                   <!-- <a href="#" class="btn btn-select-plan btn-sm">Choisir cette formule</a>-->
                   <!-- Trigger the modal with a button -->
                   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#abonnement_simple">Choisir cette formule</button>
@@ -50,15 +82,17 @@ $db = connect_db();
               <div class="col-md-4">
                 <div class="price-box to-animate-2 popular">
                   <h2 class="pricing-plan pricing-plan-offer">Abonnement Résident<span></h2>
-                    <p>Bénéficiez d'un accès ilimité 7/7j</p>
+                    <p>Bénéficiez d\'un accès ilimité 7/7j</p>
 
                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#abonnement_resident">Choisir cette formule</button>
                   </div>
                 </div>
               </div>
-            </div>
+            </div>';
+          }
 
-            <?php
+
+            
             if (isset($_GET['type'])){
               $query = $db->prepare("SELECT name FROM subscription  WHERE email = :email ");
               $query->execute([
@@ -66,8 +100,8 @@ $db = connect_db();
                 "email" =>$_SESSION ["email"]
               ]);
             }
-            ?>
-            <?php
+            
+            
             if (isset($_GET['abo'] ) ){
               $query = $db->prepare("UPDATE users SET id_subscription = :id_subscription WHERE email = :email ");
               $query->execute([
@@ -75,7 +109,10 @@ $db = connect_db();
                 "email" => $_SESSION["email"]
               ]);
             }
-            ?>
+            
+
+            if ($id_subscription[0] == 0) {
+                echo '
 
             <!-- ABONNEMENT RESIDENT -->
             <div class="modal fade" id="abonnement_resident" role="dialog">
@@ -92,14 +129,14 @@ $db = connect_db();
                     <p> Devenir membre résident avec engagement 8 mois : 252€ TTC</p>
 
                     <select id="choix_engagement" class="liste">
-                      <option value="Selection">Sélectionnez un choix d'engagement</option>
+                      <option value="Selection">Sélectionnez un choix d\'engagement</option>
                       <option value="1">Sans engagement à 300€ TTC/mois</option>
                       <option value="2">Avec engagement 8mois à 252€ TTC/mois</option>
 
                     </select>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" onclick="valid_resid()">S'abonner</button>
+                    <button type="button" class="btn btn-default" onclick="valid_resid()">S\'abonner</button>
 
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
@@ -129,7 +166,7 @@ $db = connect_db();
                     <p> Devenir Membre avec engagement 12 mois : 20€ TTC/mois</p>
 
                     <select id="choix_engagement1" class="liste1" required="required">
-                      <option value="">Sélectionnez un choix d'engagement</option>
+                      <option value="">Sélectionnez un choix d\'engagement</option>
                       <option value="3">Sans engagement à 24€ TTC/mois</option>
                       <option value="4">Avec engagement à mois à 20€ TTC/mois</option>
 
@@ -142,18 +179,18 @@ $db = connect_db();
 
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-default" onclick="valid_abo()">S'abonner</button>
+                      <button type="button" class="btn btn-default" onclick="valid_abo()">S\'abonner</button>
 
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                   </div>
 
-                </div>
-              </div>
+                ';
+            }
+            echo  '</div></div></div></div></div>';
 
-              <?php
-              require "footer.php";
-              ?>
+          require "footer.php";
+          ?>
 
               <script src="js/script.js"></script>
 
